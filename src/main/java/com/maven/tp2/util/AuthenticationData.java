@@ -10,7 +10,7 @@ import org.joda.time.DateTime;
 
 public class AuthenticationData {
 
-    private Usuario usuario;
+    private UsuarioSesion usuario;
     private DateTime lastAction;
 
     public DateTime getLastAction() {
@@ -21,11 +21,11 @@ public class AuthenticationData {
         this.lastAction = lastAction;
     }
 
-    public Usuario getUsuario() {
+    public UsuarioSesion getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(UsuarioSesion usuario) {
         this.usuario = usuario;
     }
 }

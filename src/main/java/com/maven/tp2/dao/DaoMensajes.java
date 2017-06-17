@@ -18,18 +18,6 @@ public class DaoMensajes {
     @Autowired
     private Connection conex;
 
-//    @Autowired
-//    private DaoMensajes(@Value("${db.host}") String host, @Value("${db.port}") int port, @Value("${db.name}") String dbname, @Value("${db.username}") String username, @Value("${db.password}") String password)
-//    {
-//        try {
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            conex = DriverManager.getConnection("jdbc:mysql://"+host+":"+port+"/"+dbname+"",username,password);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-
-
 
     public List todos_los_mensajes() {
         List<Mensaje> lista = new ArrayList<Mensaje>();

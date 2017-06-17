@@ -29,7 +29,7 @@ public class SessionData {
         this.sessionData = new HashMap<String, AuthenticationData>();
     }
 
-    public String addSession(Usuario usuario) {
+    public String addSession(UsuarioSesion usuario) {
         String sessionId = UUID.randomUUID().toString();
         AuthenticationData aData = new AuthenticationData();
         aData.setUsuario(usuario);

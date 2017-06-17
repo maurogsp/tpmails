@@ -12,12 +12,12 @@ import java.util.List;
  * Created by mauro on 11/06/17.
  */
 @Service
-public class Servicio {
+public class ServicioMensajes {
     @Autowired
     DaoMensajes bd;
 
 
-    public Servicio()
+    public ServicioMensajes()
     {
 
     }
