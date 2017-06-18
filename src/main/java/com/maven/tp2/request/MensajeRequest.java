@@ -23,8 +23,10 @@ public class MensajeRequest {
     String asunto;
     @JsonProperty("cuerpo")
     String cuerpo;
-    @JsonProperty("trash")
-    boolean trash;
+    @JsonProperty("trash_r")
+    boolean trash_r;
+    @JsonProperty("trash_e")
+    boolean trash_e;
 
     public int getIduf() {
         return iduf;
@@ -82,11 +84,19 @@ public class MensajeRequest {
         this.cuerpo = cuerpo;
     }
 
-    public boolean isTrash() {
-        return trash;
+    public boolean isTrash_r() {
+        return trash_r;
     }
 
-    public void setTrash(boolean trash) {
-        this.trash = trash;
+    public void setTrash_r(boolean trash_r) {
+        this.trash_r = trash_r;
+    }
+
+    public boolean isTrash_e() {
+        return trash_e;
+    }
+
+    public void setTrash_e(boolean trash_e) {
+        this.trash_e = trash_e;
     }
 }

@@ -21,8 +21,6 @@ import java.util.List;
 public class DaoUsuarios {
     @Autowired
     private Connection conex;
-    private SessionFactory sessionFactory;
-
 
     public UsuarioSesion get(String nombreUsuario, String password) {
         List<UsuarioSesion> lista = new ArrayList<UsuarioSesion>();

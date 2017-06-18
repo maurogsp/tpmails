@@ -22,7 +22,7 @@ public class ControladoraMensajes {
 
     @RequestMapping(value = "/recibidos", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<List<Mensaje>> recibidos_x_usuario(@RequestHeader("id_usuario") int idu) {
-        List<Mensaje> listamails = service.mensajes_x_usuario(idu);
+        List<Mensaje> listamails = service.mensajes_recibidos_x_usuario(idu);
         if (listamails.size() > 0) {
             return new ResponseEntity<List<Mensaje>>(listamails, HttpStatus.OK);
         } else {
@@ -30,9 +30,9 @@ public class ControladoraMensajes {
         }
     }
 
-    @RequestMapping(value = "/eliminados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody ResponseEntity<List<Mensaje>> eliminados_x_usuario(@RequestParam("idb") int id) {
-        List<Mensaje> listamails = service.mensajes_borrados(id);
+    @RequestMapping(value = "/enviados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody ResponseEntity<List<Mensaje>> enviados_x_usuario(@RequestHeader("id_usuario") int idu) {
+        List<Mensaje> listamails = service.mensajes_enviados_x_usuario(idu);
         if (listamails.size() > 0) {
             return new ResponseEntity<List<Mensaje>>(listamails, HttpStatus.OK);
         } else {
@@ -40,25 +40,44 @@ public class ControladoraMensajes {
         }
     }
 
-    @RequestMapping(value = "/nuevomensaje", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/recibidos_eliminados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody ResponseEntity<List<Mensaje>> rec_eliminados_x_usuario(@RequestHeader("id_usuario") int idu) {
+        List<Mensaje> listamails = service.mensajes_recibidos_borrados(idu);
+        if (listamails.size() > 0) {
+            return new ResponseEntity<List<Mensaje>>(listamails, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<List<Mensaje>>(HttpStatus.NO_CONTENT);
+        }
+    }
+
+    @RequestMapping(value = "/enviados_eliminados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody ResponseEntity<List<Mensaje>> env_eliminados_x_usuario(@RequestHeader("id_usuario") int idu) {
+        List<Mensaje> listamails = service.mensajes_enviados_borrados(idu);
+        if (listamails.size() > 0) {
+            return new ResponseEntity<List<Mensaje>>(listamails, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<List<Mensaje>>(HttpStatus.NO_CONTENT);
+        }
+    }
+
+    @RequestMapping(value = "/nuevo_mensaje", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity nuevoMensaje(@RequestBody MensajeRequest request) {
         try {
-            service.enviarMensaje(request.getIduf(),request.getIdut(),request.getRemitente(),request.getRecipiente(),request.getAsunto(),request.getCuerpo(),request.isTrash());
+            service.enviarMensaje(request.getIduf(),request.getIdut(),request.getRemitente(),request.getRecipiente(),request.getAsunto(),request.getCuerpo(),request.isTrash_r(), request.isTrash_e());
             return new ResponseEntity(HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @RequestMapping(value = "/eliminarmensaje", method = RequestMethod.PATCH, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity eliminarMensaje(@RequestBody MensajeRequest request) {
+    @RequestMapping(value = "/eliminar_mensaje", method = RequestMethod.DELETE)
+    public ResponseEntity eliminarMensaje(@RequestHeader("id_usuario") int idu, @RequestParam ("id") int idm) {
         try {
-            service.enviarMensaje(request.getIduf(),request.getIdut(),request.getRemitente(),request.getRecipiente(),request.getAsunto(),request.getCuerpo(),request.isTrash());
-            return new ResponseEntity(HttpStatus.CREATED);
+            service.eliminarMensaje(idu,idm);
+            return new ResponseEntity(HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
 
 }
