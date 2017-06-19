@@ -1,5 +1,6 @@
 package com.maven.tp2.controladora;
 
+import com.maven.tp2.Wrappers.MensajeWrapper;
 import com.maven.tp2.modelo.Mensaje;
 import com.maven.tp2.request.MensajeRequest;
 import com.maven.tp2.servicio.ServicioMensajes;
@@ -9,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,42 +23,66 @@ public class ControladoraMensajes {
     ServicioMensajes service;
 
     @RequestMapping(value = "/recibidos", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody ResponseEntity<List<Mensaje>> recibidos_x_usuario(@RequestHeader("id_usuario") int idu) {
+    public @ResponseBody ResponseEntity<List<MensajeWrapper>> recibidos_x_usuario(@RequestHeader("id_usuario") int idu) {
         List<Mensaje> listamails = service.mensajes_recibidos_x_usuario(idu);
         if (listamails.size() > 0) {
-            return new ResponseEntity<List<Mensaje>>(listamails, HttpStatus.OK);
+            List<MensajeWrapper> lista = new ArrayList<MensajeWrapper>();
+            for (Mensaje m : listamails)
+            {
+                MensajeWrapper mw = new MensajeWrapper(m);
+                lista.add(mw);
+            }
+            return new ResponseEntity<List<MensajeWrapper>>(lista, HttpStatus.OK);
         } else {
-            return new ResponseEntity<List<Mensaje>>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<List<MensajeWrapper>>(HttpStatus.NO_CONTENT);
         }
     }
 
     @RequestMapping(value = "/enviados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody ResponseEntity<List<Mensaje>> enviados_x_usuario(@RequestHeader("id_usuario") int idu) {
+    public @ResponseBody ResponseEntity<List<MensajeWrapper>> enviados_x_usuario(@RequestHeader("id_usuario") int idu) {
         List<Mensaje> listamails = service.mensajes_enviados_x_usuario(idu);
         if (listamails.size() > 0) {
-            return new ResponseEntity<List<Mensaje>>(listamails, HttpStatus.OK);
+            List<MensajeWrapper> lista = new ArrayList<MensajeWrapper>();
+            for (Mensaje m : listamails)
+            {
+                MensajeWrapper mw = new MensajeWrapper(m);
+                lista.add(mw);
+            }
+            return new ResponseEntity<List<MensajeWrapper>>(lista, HttpStatus.OK);
         } else {
-            return new ResponseEntity<List<Mensaje>>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<List<MensajeWrapper>>(HttpStatus.NO_CONTENT);
         }
     }
 
     @RequestMapping(value = "/recibidos_eliminados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody ResponseEntity<List<Mensaje>> rec_eliminados_x_usuario(@RequestHeader("id_usuario") int idu) {
+    public @ResponseBody ResponseEntity<List<MensajeWrapper>> rec_eliminados_x_usuario(@RequestHeader("id_usuario") int idu) {
         List<Mensaje> listamails = service.mensajes_recibidos_borrados(idu);
         if (listamails.size() > 0) {
-            return new ResponseEntity<List<Mensaje>>(listamails, HttpStatus.OK);
+            List<MensajeWrapper> lista = new ArrayList<MensajeWrapper>();
+            for (Mensaje m : listamails)
+            {
+                MensajeWrapper mw = new MensajeWrapper(m);
+                lista.add(mw);
+            }
+            return new ResponseEntity<List<MensajeWrapper>>(lista, HttpStatus.OK);
         } else {
-            return new ResponseEntity<List<Mensaje>>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<List<MensajeWrapper>>(HttpStatus.NO_CONTENT);
         }
     }
 
     @RequestMapping(value = "/enviados_eliminados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody ResponseEntity<List<Mensaje>> env_eliminados_x_usuario(@RequestHeader("id_usuario") int idu) {
+    public @ResponseBody ResponseEntity<List<MensajeWrapper>> env_eliminados_x_usuario(@RequestHeader("id_usuario") int idu) {
         List<Mensaje> listamails = service.mensajes_enviados_borrados(idu);
         if (listamails.size() > 0) {
-            return new ResponseEntity<List<Mensaje>>(listamails, HttpStatus.OK);
+            List<MensajeWrapper> lista = new ArrayList<MensajeWrapper>();
+            for (Mensaje m : listamails)
+            {
+                MensajeWrapper mw = new MensajeWrapper(m);
+                lista.add(mw);
+            }
+            return new ResponseEntity<List<MensajeWrapper>>(lista, HttpStatus.OK);
         } else {
-            return new ResponseEntity<List<Mensaje>>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<List<MensajeWrapper>>(HttpStatus.NO_CONTENT);
         }
     }
 

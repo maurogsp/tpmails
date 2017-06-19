@@ -6,6 +6,8 @@ import com.maven.tp2.util.UsuarioSesion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by mauro on 16/06/17.
  */
@@ -21,6 +23,11 @@ public class ServicioUsuarios {
 
     public UsuarioSesion login(String nombreUsuario, String password) {
         return usuarioDao.get(nombreUsuario,password);
+    }
+
+    public List listar_usuarios()
+    {
+        return usuarioDao.listar_usuarios();
     }
 
 }

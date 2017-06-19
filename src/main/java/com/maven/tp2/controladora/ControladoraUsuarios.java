@@ -1,45 +1,48 @@
 package com.maven.tp2.controladora;
 
+import com.maven.tp2.Wrappers.UsuarioWrapper;
+import com.maven.tp2.modelo.Mensaje;
 import com.maven.tp2.modelo.Usuario;
-import com.maven.tp2.response.LoginResponseWrapper;
 import com.maven.tp2.servicio.ServicioUsuarios;
-import com.maven.tp2.util.SessionData;
-import com.maven.tp2.util.UsuarioSesion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * Created by mauro on 13/06/17.
+ * Created by mauro on 18/06/17.
  */
 @RestController
-@RequestMapping(value="/", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping("/api")
 public class ControladoraUsuarios {
-
     @Autowired
-    ServicioUsuarios serviusuario;
+    ServicioUsuarios service;
 
-    @Autowired
-    SessionData sessionData;
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/usuarios", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
-    ResponseEntity<LoginResponseWrapper> getById(@RequestParam("user") String nombreUsuario, @RequestParam("pwd") String pwd){
-        UsuarioSesion u = serviusuario.login(nombreUsuario, pwd);
-        if (null != u) {
-            String sessionId = sessionData.addSession(u);
-            return new ResponseEntity<LoginResponseWrapper>(new LoginResponseWrapper(sessionId), HttpStatus.OK);
+    ResponseEntity<List<UsuarioWrapper>> listar_usuarios(@RequestHeader("id_usuario") int idu, @RequestHeader("admin") boolean adm) {
+        if (adm)
+        {
+            List<Usuario> listausuarios = service.listar_usuarios();
+            if (listausuarios.size() > 0) {
+                List<UsuarioWrapper> lista = new ArrayList<UsuarioWrapper>();
+                for (Usuario u : listausuarios)
+                {
+                    UsuarioWrapper uw = new UsuarioWrapper(u);
+                    lista.add(uw);
+                }
+                return new ResponseEntity<List<UsuarioWrapper>>(lista, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.NO_CONTENT);
+            }
         }
-        return new ResponseEntity(HttpStatus.FORBIDDEN);
+        else
+        {
+            return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.FORBIDDEN);
+        }
     }
-
-
-    @RequestMapping("/logout")
-    public @ResponseBody ResponseEntity getById(@RequestHeader("sessionid") String sessionId) {
-        sessionData.removeSession(sessionId);
-        return new ResponseEntity(HttpStatus.ACCEPTED);
-    }
-
 }

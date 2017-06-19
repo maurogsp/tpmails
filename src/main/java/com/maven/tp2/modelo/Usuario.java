@@ -17,6 +17,7 @@ public class Usuario {
     private String pais;
     private String mail;
     private boolean borrado;
+    private boolean admin;
 
 
     public int getId() {
@@ -115,7 +116,15 @@ public class Usuario {
         this.borrado = borrado;
     }
 
-    public Usuario(int id, String nombre_usuario, String contrasenia, String nombre, String apellido, String direccion, String telefono, String ciudad, String provincia, String pais, String mail, boolean borrado) {
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
+    public Usuario(int id, String nombre_usuario, String contrasenia, String nombre, String apellido, String direccion, String telefono, String ciudad, String provincia, String pais, String mail, boolean borrado, boolean admin) {
         this.id = id;
         this.nombre_usuario = nombre_usuario;
         this.contrasenia = contrasenia;
@@ -128,6 +137,7 @@ public class Usuario {
         this.pais = pais;
         this.mail = mail;
         this.borrado = borrado;
+        this.admin = admin;
     }
 
     @Override
@@ -145,6 +155,7 @@ public class Usuario {
                 ", pais='" + pais + '\'' +
                 ", mail='" + mail + '\'' +
                 ", borrado=" + borrado +
+                ", admin=" + admin +
                 '}';
     }
 }

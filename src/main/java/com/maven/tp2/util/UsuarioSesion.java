@@ -8,11 +8,14 @@ public class UsuarioSesion {
     private int id;
     private String nombreUsuario;
     private String password;
+    private boolean admin;
 
-    public UsuarioSesion(int id, String nombreUsuario, String password) {
+
+    public UsuarioSesion(int id, String nombreUsuario, String password, boolean admin) {
         this.id = id;
         this.nombreUsuario = nombreUsuario;
         this.password = password;
+        this.admin = admin;
     }
 
     public int getId() {
@@ -37,6 +40,15 @@ public class UsuarioSesion {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 
 }
