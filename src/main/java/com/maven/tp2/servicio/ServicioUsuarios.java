@@ -30,4 +30,19 @@ public class ServicioUsuarios {
         return usuarioDao.listar_usuarios();
     }
 
+    public List listar_usuarios_x_nombre(String nombre)
+    {
+        return usuarioDao.listar_usuarios_x_nombre(nombre);
+    }
+
+    public void crear_Usuario(String nombre_usuario, String contrasenia, String nombre, String apellido, String direccion, String telefono, String ciudad, String provincia, String pais, String mail, boolean borrado, boolean admin)
+    {
+        usuarioDao.crearUsuario(nombre_usuario, contrasenia,nombre,apellido,direccion,telefono,ciudad,provincia,pais,mail,borrado,admin);
+    }
+
+    public void eliminar_Usuario (int id)
+    {
+        usuarioDao.eliminar_usuario(id);
+    }
+
 }
