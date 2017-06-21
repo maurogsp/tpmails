@@ -4,6 +4,7 @@ import com.maven.tp2.response.LoginResponseWrapper;
 import com.maven.tp2.servicio.ServicioUsuarios;
 import com.maven.tp2.util.SessionData;
 import com.maven.tp2.util.UsuarioSesion;
+import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +21,7 @@ import static org.junit.Assert.*;
  * Created by mauro on 21/06/17.
  */
 @RunWith(PowerMockRunner.class)
-public class ControladoraLoginTest {
+public class ControladoraLoginTest extends TestCase{
 
     ControladoraLogin cl;
     ServicioUsuarios su;

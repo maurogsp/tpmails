@@ -22,7 +22,7 @@ public class ControladoraMensajes {
     @Autowired
     ServicioMensajes service;
 
-    @RequestMapping(value = "/recibidos", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/mensajes/recibidos", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<List<MensajeWrapper>> recibidos_x_usuario(@RequestHeader("id_usuario") int idu) {
         try
         {
@@ -47,7 +47,7 @@ public class ControladoraMensajes {
 
     }
 
-    @RequestMapping(value = "/enviados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/mensajes/enviados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<List<MensajeWrapper>> enviados_x_usuario(@RequestHeader("id_usuario") int idu) {
         try
         {
@@ -72,7 +72,7 @@ public class ControladoraMensajes {
 
     }
 
-    @RequestMapping(value = "/recibidos_eliminados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/mensajes/recibidos_eliminados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<List<MensajeWrapper>> rec_eliminados_x_usuario(@RequestHeader("id_usuario") int idu) {
         try
         {
@@ -97,7 +97,7 @@ public class ControladoraMensajes {
 
     }
 
-    @RequestMapping(value = "/enviados_eliminados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/mensajes/enviados_eliminados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<List<MensajeWrapper>> env_eliminados_x_usuario(@RequestHeader("id_usuario") int idu) {
         try
         {
@@ -122,7 +122,7 @@ public class ControladoraMensajes {
 
     }
 
-    @RequestMapping(value = "/nuevo_mensaje", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/mensajes", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity nuevoMensaje(@RequestBody MensajeRequest request) {
         try {
             service.enviarMensaje(request.getIduf(),request.getIdut(),request.getRemitente(),request.getRecipiente(),request.getAsunto(),request.getCuerpo(),request.isTrash_r(), request.isTrash_e());
@@ -133,7 +133,7 @@ public class ControladoraMensajes {
         }
     }
 
-    @RequestMapping(value = "/eliminar_mensaje", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/mensajes", method = RequestMethod.DELETE)
     public ResponseEntity eliminarMensaje(@RequestHeader("id_usuario") int idu, @RequestParam("id") int idm) {
         try {
             service.eliminarMensaje(idu, idm);

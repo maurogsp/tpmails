@@ -81,7 +81,7 @@ public class ControladoraUsuarios {
 
     }
 
-    @RequestMapping(value = "/nuevo_usuario", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/usuarios", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity nuevoMensaje(@RequestBody UsuarioRequest request, @RequestHeader("admin") boolean adm) {
         try {
             if (adm) {
@@ -97,7 +97,7 @@ public class ControladoraUsuarios {
         }
     }
 
-    @RequestMapping(value = "/eliminar_usuario", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/usuarios", method = RequestMethod.DELETE)
     public ResponseEntity eliminarMensaje(@RequestHeader("admin") boolean adm, @RequestParam("id") int idu) {
         try {
             if (adm) {
