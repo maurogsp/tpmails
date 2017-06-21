@@ -17,13 +17,24 @@ import java.util.List;
  */
 @Repository
 public class DaoUsuarios {
+
     @Autowired
     private Connection conex;
 
-    public UsuarioSesion get(String nombreUsuario, String password) {
+    public Connection getConex() {
+        return conex;
+    }
+
+    public void setConex(Connection conex) {
+        this.conex = conex;
+    }
+
+
+    public UsuarioSesion get(String nombreUsuario, String password) throws Exception {
         List<UsuarioSesion> lista = new ArrayList<UsuarioSesion>();
+        UsuarioSesion u = null;
         try {
-            String cmd = "select id, nombre_usuario, pass, admin from usuarios where nombre_usuario = '"+nombreUsuario+"' and pass ="+password;
+            String cmd = "select id, nombre_usuario, pass, admin from usuarios where nombre_usuario = '" + nombreUsuario + "' and pass ='" + password+"'";
             Statement st = conex.createStatement();
             ResultSet rs = st.executeQuery(cmd);
 
@@ -31,20 +42,20 @@ public class DaoUsuarios {
                 UsuarioSesion user = new UsuarioSesion(rs.getInt("id"), rs.getString("nombre_usuario"), rs.getString("pass"), rs.getBoolean("admin"));
                 lista.add(user);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            if (lista.size() == 1) {
+                u = lista.get(0);
+            }
 
-        if (lista.size() == 1) {
-            return lista.get(0);
-        } else {
-            return null;
+        } catch (Exception e) {
+            throw e;
+
         }
+        return u;
+
 
     }
 
-    public List listar_usuarios ()
-    {
+    public List listar_usuarios() throws Exception {
         List<Usuario> lista = new ArrayList<Usuario>();
         try {
             String cmd = "select * from usuarios";
@@ -56,16 +67,15 @@ public class DaoUsuarios {
                 lista.add(user);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            throw e;
         }
-            return lista;
+        return lista;
     }
 
-    public List listar_usuarios_x_nombre (String nombre)
-    {
+    public List listar_usuarios_x_nombre(String nombre) throws Exception{
         List<Usuario> lista = new ArrayList<Usuario>();
         try {
-            String cmd = "select * from usuarios where nombre like '%"+nombre+"%'";
+            String cmd = "select * from usuarios where nombre like '%" + nombre + "%'";
             Statement st = conex.createStatement();
             ResultSet rs = st.executeQuery(cmd);
 
@@ -74,12 +84,12 @@ public class DaoUsuarios {
                 lista.add(user);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+           throw e;
         }
         return lista;
     }
 
-    public void crearUsuario (String nombre_usuario, String contrasenia, String nombre, String apellido, String direccion, String telefono, String ciudad, String provincia, String pais, String mail, boolean borrado, boolean admin) {
+    public void crearUsuario(String nombre_usuario, String contrasenia, String nombre, String apellido, String direccion, String telefono, String ciudad, String provincia, String pais, String mail, boolean borrado, boolean admin) throws Exception {
         try {
             conex.setAutoCommit(false);
             PreparedStatement ps = conex.prepareStatement("INSERT INTO usuarios (nombre_usuario, pass, nombre, apellido, direccion, telefono, ciudad, provincia, pais, mail, borrado, admin) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -98,21 +108,21 @@ public class DaoUsuarios {
             ps.execute();
             conex.commit();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw e;
         }
 
     }
 
-    public void eliminar_usuario (int idu) {
+    public void eliminar_usuario(int idu) throws Exception {
         try {
             conex.setAutoCommit(false);
-            PreparedStatement ps = conex.prepareStatement("delete from usuarios where id = ?");
+            PreparedStatement ps = conex.prepareStatement("update usuarios set borrado = 1 where id = ?");
             ps.setInt(1, idu);
             ps.execute();
             conex.commit();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw e;
         }
     }
 
-    }
+}

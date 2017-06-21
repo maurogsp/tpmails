@@ -26,13 +26,11 @@ public class ControladoraUsuarios {
     @RequestMapping(value = "/usuarios", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     ResponseEntity<List<UsuarioWrapper>> listar_usuarios(@RequestHeader("admin") boolean adm) {
-        if (adm)
-        {
+        if (adm) {
             List<Usuario> listausuarios = service.listar_usuarios();
             if (listausuarios.size() > 0) {
                 List<UsuarioWrapper> lista = new ArrayList<UsuarioWrapper>();
-                for (Usuario u : listausuarios)
-                {
+                for (Usuario u : listausuarios) {
                     UsuarioWrapper uw = new UsuarioWrapper(u);
                     lista.add(uw);
                 }
@@ -40,9 +38,7 @@ public class ControladoraUsuarios {
             } else {
                 return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.NO_CONTENT);
             }
-        }
-        else
-        {
+        } else {
             return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.FORBIDDEN);
         }
     }
@@ -50,13 +46,11 @@ public class ControladoraUsuarios {
     @RequestMapping(value = "/usuarios/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     ResponseEntity<List<UsuarioWrapper>> listar_usuarios(@RequestHeader("admin") boolean adm, @RequestParam("nombre") String nombre) {
-        if (adm)
-        {
+        if (adm) {
             List<Usuario> listausuarios = service.listar_usuarios_x_nombre(nombre);
             if (listausuarios.size() > 0) {
                 List<UsuarioWrapper> lista = new ArrayList<UsuarioWrapper>();
-                for (Usuario u : listausuarios)
-                {
+                for (Usuario u : listausuarios) {
                     UsuarioWrapper uw = new UsuarioWrapper(u);
                     lista.add(uw);
                 }
@@ -64,9 +58,7 @@ public class ControladoraUsuarios {
             } else {
                 return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.NO_CONTENT);
             }
-        }
-        else
-        {
+        } else {
             return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.FORBIDDEN);
         }
     }
@@ -74,13 +66,10 @@ public class ControladoraUsuarios {
     @RequestMapping(value = "/nuevo_usuario", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity nuevoMensaje(@RequestBody UsuarioRequest request, @RequestHeader("admin") boolean adm) {
         try {
-            if(adm)
-            {
-                service.crear_Usuario(request.getNombre_usuario(),request.getPassword(),request.getNombre(),request.getApellido(),request.getDireccion(),request.getTelefono(),request.getCiudad(), request.getProvincia(), request.getPais(), request.getMail(), request.isBorrado(), request.isAdmin());
+            if (adm) {
+                service.crear_Usuario(request.getNombre_usuario(), request.getPassword(), request.getNombre(), request.getApellido(), request.getDireccion(), request.getTelefono(), request.getCiudad(), request.getProvincia(), request.getPais(), request.getMail(), request.isBorrado(), request.isAdmin());
                 return new ResponseEntity(HttpStatus.CREATED);
-            }
-            else
-            {
+            } else {
                 return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.FORBIDDEN);
             }
 
@@ -90,15 +79,12 @@ public class ControladoraUsuarios {
     }
 
     @RequestMapping(value = "/eliminar_usuario", method = RequestMethod.DELETE)
-    public ResponseEntity eliminarMensaje(@RequestHeader("admin") boolean adm, @RequestParam ("id") int idu) {
+    public ResponseEntity eliminarMensaje(@RequestHeader("admin") boolean adm, @RequestParam("id") int idu) {
         try {
-            if(adm)
-            {
+            if (adm) {
                 service.eliminar_Usuario(idu);
                 return new ResponseEntity(HttpStatus.OK);
-            }
-            else
-            {
+            } else {
                 return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.FORBIDDEN);
             }
 

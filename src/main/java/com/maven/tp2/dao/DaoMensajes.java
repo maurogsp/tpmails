@@ -15,13 +15,26 @@ import java.util.Date;
  */
 @Repository
 public class DaoMensajes {
+
     @Autowired
     private Connection conex;
 
+    public Connection getConex() {
+        return conex;
+    }
 
-    public List todos_los_mensajes() {
+    public void setConex(Connection conex) {
+        this.conex = conex;
+    }
+
+    public DaoMensajes()
+    {
+
+    }
+
+
+    public List todos_los_mensajes() throws Exception {
         List<Mensaje> lista = new ArrayList<Mensaje>();
-
         try {
             String cmd = "select * from mensajes";
             //Statement st = DaoMensajes.getinstance().conex.createStatement();
@@ -35,16 +48,16 @@ public class DaoMensajes {
 
 
         } catch (Exception e) {
-
+            throw e;
         }
         return lista;
     }
 
-    public List mensajes_recibidos_x_usuario(int id) {
+    public List mensajes_recibidos_x_usuario(int id) throws Exception{
         List<Mensaje> lista = new ArrayList<Mensaje>();
 
         try {
-            String cmd = "select * from mensajes where user_id_to ="+id;
+            String cmd = "select * from mensajes where user_id_to =" + id;
             //Statement st = DaoMensajes.getinstance().conex.createStatement();
             Statement st = conex.createStatement();
             ResultSet rs = st.executeQuery(cmd);
@@ -55,17 +68,16 @@ public class DaoMensajes {
             }
 
         } catch (Exception e) {
-
+            throw e;
         }
         return lista;
     }
 
-    public List mensajes_enviados_x_usuario(int id) {
+    public List mensajes_enviados_x_usuario(int id) throws Exception{
         List<Mensaje> lista = new ArrayList<Mensaje>();
 
         try {
-            String cmd = "select * from mensajes where user_id_from ="+id;
-            //Statement st = DaoMensajes.getinstance().conex.createStatement();
+            String cmd = "select * from mensajes where user_id_from =" + id;
             Statement st = conex.createStatement();
             ResultSet rs = st.executeQuery(cmd);
 
@@ -75,17 +87,16 @@ public class DaoMensajes {
             }
 
         } catch (Exception e) {
-
+            throw e;
         }
         return lista;
     }
 
-    public List mensajes_recibidos_borrados(int id) {
+    public List mensajes_recibidos_borrados(int id) throws Exception {
         List<Mensaje> lista = new ArrayList<Mensaje>();
 
         try {
-            String cmd = "select * from mensajes where user_id_to ="+id+" and trash_recibido = 1";
-            //Statement st = DaoMensajes.getinstance().conex.createStatement();
+            String cmd = "select * from mensajes where user_id_to =" + id + " and trash_recibido = 1";
             Statement st = conex.createStatement();
             ResultSet rs = st.executeQuery(cmd);
 
@@ -95,33 +106,31 @@ public class DaoMensajes {
             }
 
         } catch (Exception e) {
-
+            throw e;
         }
         return lista;
     }
 
-    public List mensajes_enviados_borrados(int id) {
+    public List mensajes_enviados_borrados(int id) throws Exception {
         List<Mensaje> lista = new ArrayList<Mensaje>();
 
         try {
-            String cmd = "select * from mensajes where user_id_from ="+id+" and trash_enviado = 1";
-            //Statement st = DaoMensajes.getinstance().conex.createStatement();
+            String cmd = "select * from mensajes where user_id_from =" + id + " and trash_enviado = 1";
             Statement st = conex.createStatement();
             ResultSet rs = st.executeQuery(cmd);
 
             while (rs.next()) {
-                Mensaje local = new Mensaje(rs.getInt("id"), rs.getInt("user_id_from"), rs.getInt("user_id_to"), rs.getString("remitente"), rs.getString("recipiente"), rs.getDate("fecha"), rs.getString("asunto"), rs.getString("cuerpo"), rs.getBoolean("trash_recibido"),rs.getBoolean("trash_enviado"));
+                Mensaje local = new Mensaje(rs.getInt("id"), rs.getInt("user_id_from"), rs.getInt("user_id_to"), rs.getString("remitente"), rs.getString("recipiente"), rs.getDate("fecha"), rs.getString("asunto"), rs.getString("cuerpo"), rs.getBoolean("trash_recibido"), rs.getBoolean("trash_enviado"));
                 lista.add(local);
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            throw e;
         }
         return lista;
     }
 
-    public void enviarMail (int iduf, int idut, String rem, String rec, String asunto, String cuerpo, boolean trash_r, boolean trash_e)
-    {
+    public void enviarMail(int iduf, int idut, String rem, String rec, String asunto, String cuerpo, boolean trash_r, boolean trash_e) throws Exception {
         try {
             conex.setAutoCommit(false);
             PreparedStatement ps = conex.prepareStatement("INSERT INTO mensajes (user_id_from, user_id_to, remitente, recipiente, fecha, asunto, cuerpo, trash_recibido, trash_enviado) VALUES (?,?,?,?,?,?,?,?,?)");
@@ -138,14 +147,13 @@ public class DaoMensajes {
             ps.execute();
             conex.commit();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw e;
         }
 
 
     }
 
-    public void eliminar_mensaje (int idu, int id)
-    {
+    public void eliminar_mensaje(int idu, int id) throws Exception {
         try {
             conex.setAutoCommit(false);
             PreparedStatement ps = conex.prepareStatement("call eliminar_mensaje (?,?)");
@@ -154,7 +162,7 @@ public class DaoMensajes {
             ps.execute();
             conex.commit();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw e;
         }
 
     }

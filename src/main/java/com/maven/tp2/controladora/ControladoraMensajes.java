@@ -97,9 +97,9 @@ public class ControladoraMensajes {
     }
 
     @RequestMapping(value = "/eliminar_mensaje", method = RequestMethod.DELETE)
-    public ResponseEntity eliminarMensaje(@RequestHeader("id_usuario") int idu, @RequestParam ("id") int idm) {
+    public ResponseEntity eliminarMensaje(@RequestHeader("id_usuario") int idu, @RequestParam("id") int idm) {
         try {
-            service.eliminarMensaje(idu,idm);
+            service.eliminarMensaje(idu, idm);
             return new ResponseEntity(HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);

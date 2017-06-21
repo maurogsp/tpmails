@@ -13,36 +13,61 @@ import java.util.List;
  */
 @Service
 public class ServicioUsuarios {
-
+    @Autowired
     DaoUsuarios usuarioDao;
 
-    @Autowired
-    public ServicioUsuarios(DaoUsuarios dao) {
-        this.usuarioDao = dao;
+
+    public ServicioUsuarios() {
+
     }
 
     public UsuarioSesion login(String nombreUsuario, String password) {
-        return usuarioDao.get(nombreUsuario,password);
+        UsuarioSesion u = null;
+        try {
+            u = usuarioDao.get(nombreUsuario, password);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+        return u;
     }
 
-    public List listar_usuarios()
-    {
-        return usuarioDao.listar_usuarios();
+    public List listar_usuarios() {
+        List lista = null;
+        try {
+            lista = usuarioDao.listar_usuarios();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return lista;
     }
 
-    public List listar_usuarios_x_nombre(String nombre)
-    {
-        return usuarioDao.listar_usuarios_x_nombre(nombre);
+    public List listar_usuarios_x_nombre(String nombre) {
+        List lista = null;
+        try {
+            lista = usuarioDao.listar_usuarios_x_nombre(nombre);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return lista;
     }
 
-    public void crear_Usuario(String nombre_usuario, String contrasenia, String nombre, String apellido, String direccion, String telefono, String ciudad, String provincia, String pais, String mail, boolean borrado, boolean admin)
-    {
-        usuarioDao.crearUsuario(nombre_usuario, contrasenia,nombre,apellido,direccion,telefono,ciudad,provincia,pais,mail,borrado,admin);
+    public void crear_Usuario(String nombre_usuario, String contrasenia, String nombre, String apellido, String direccion, String telefono, String ciudad, String provincia, String pais, String mail, boolean borrado, boolean admin) {
+        try {
+            usuarioDao.crearUsuario(nombre_usuario, contrasenia, nombre, apellido, direccion, telefono, ciudad, provincia, pais, mail, borrado, admin);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
-    public void eliminar_Usuario (int id)
-    {
-        usuarioDao.eliminar_usuario(id);
+    public void eliminar_Usuario(int id) {
+        try {
+            usuarioDao.eliminar_usuario(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

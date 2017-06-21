@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by mauro on 13/06/17.
  */
 @RestController
-@RequestMapping(value="/", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ControladoraLogin {
 
     @Autowired
@@ -26,7 +26,7 @@ public class ControladoraLogin {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public @ResponseBody
-    ResponseEntity<LoginResponseWrapper> getById(@RequestParam("user") String nombreUsuario, @RequestParam("pwd") String pwd){
+    ResponseEntity<LoginResponseWrapper> getById(@RequestParam("user") String nombreUsuario, @RequestParam("pwd") String pwd) {
         UsuarioSesion u = serviusuario.login(nombreUsuario, pwd);
         if (null != u) {
             String sessionId = sessionData.addSession(u);
@@ -37,7 +37,8 @@ public class ControladoraLogin {
 
 
     @RequestMapping("/logout")
-    public @ResponseBody ResponseEntity getById(@RequestHeader("sessionid") String sessionId) {
+    public @ResponseBody
+    ResponseEntity getById(@RequestHeader("sessionid") String sessionId) {
         sessionData.removeSession(sessionId);
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }

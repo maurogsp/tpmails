@@ -17,105 +17,76 @@ public class ServicioMensajes {
     DaoMensajes bd;
 
 
-    public ServicioMensajes()
-    {
+    public ServicioMensajes() {
 
     }
 
-    public List todos_los_mensajes()
-    {
-        List<Mensaje> lista = new ArrayList<Mensaje>();
-        try
-        {
-            lista =  bd.todos_los_mensajes();
-        }
-        catch(Exception e)
-        {
-
+    public List todos_los_mensajes() {
+        List lista = null;
+        try {
+            lista = bd.todos_los_mensajes();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return lista;
     }
 
-    public List mensajes_recibidos_x_usuario (int id)
-    {
-        List<Mensaje> lista = new ArrayList<Mensaje>();
-        try
-        {
+    public List mensajes_recibidos_x_usuario(int id) {
+        List lista = null;
+        try {
             lista = bd.mensajes_recibidos_x_usuario(id);
-        }
-        catch (Exception e)
-        {
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return lista;
     }
 
-    public List mensajes_enviados_x_usuario (int id)
-    {
-        List<Mensaje> lista = new ArrayList<Mensaje>();
-        try
-        {
+    public List mensajes_enviados_x_usuario(int id) {
+        List lista = null;
+        try {
             lista = bd.mensajes_enviados_x_usuario(id);
-        }
-        catch (Exception e)
-        {
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return lista;
     }
 
-    public List mensajes_recibidos_borrados (int id)
-    {
-        List<Mensaje> lista = new ArrayList<Mensaje>();
-        try
-        {
+    public List mensajes_recibidos_borrados(int id) {
+        List lista = null;
+        try {
             lista = bd.mensajes_recibidos_borrados(id);
-        }
-        catch (Exception e)
-        {
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return lista;
     }
 
-    public List mensajes_enviados_borrados (int id)
-    {
-        List<Mensaje> lista = new ArrayList<Mensaje>();
-        try
-        {
+    public List mensajes_enviados_borrados(int id) {
+        List lista = null;
+        try {
             lista = bd.mensajes_enviados_borrados(id);
-        }
-        catch (Exception e)
-        {
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return lista;
     }
-    public void enviarMensaje (int user_id_from, int user_id_to, String remitente, String recipiente, String asunto, String cuerpo, boolean trash_r, boolean trash_e)
-    {
-        try
-        {
-            bd.enviarMail(user_id_from,user_id_to,remitente,recipiente,asunto,cuerpo,trash_r,trash_e);
-        }
-        catch (Exception e)
-        {
+
+    public void enviarMensaje(int user_id_from, int user_id_to, String remitente, String recipiente, String asunto, String cuerpo, boolean trash_r, boolean trash_e) {
+        try {
+            bd.enviarMail(user_id_from, user_id_to, remitente, recipiente, asunto, cuerpo, trash_r, trash_e);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
-    public void eliminarMensaje(int idu, int idm)
-    {
-        try
-        {
-            bd.eliminar_mensaje(idu,idm);
-        }
-        catch (Exception e)
-        {
+    public void eliminarMensaje(int idu, int idm) {
+        try {
+            bd.eliminar_mensaje(idu, idm);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 
 
 }

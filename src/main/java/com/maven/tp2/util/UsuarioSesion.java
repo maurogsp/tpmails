@@ -10,7 +10,10 @@ public class UsuarioSesion {
     private String password;
     private boolean admin;
 
+    public UsuarioSesion()
+    {
 
+    }
     public UsuarioSesion(int id, String nombreUsuario, String password, boolean admin) {
         this.id = id;
         this.nombreUsuario = nombreUsuario;

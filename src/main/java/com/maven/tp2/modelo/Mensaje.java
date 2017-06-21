@@ -6,29 +6,29 @@ import java.util.Date;
  * Created by mauro on 11/06/17.
  */
 public class Mensaje {
-        private int id;
-        private int user_id_from;
-        private int user_id_to;
-        private String remitente;
-        private String recipiente;
-        private Date fecha;
-        private String asunto;
-        private String cuerpo;// adentro puedo poner html
-        private boolean trash_r;
-        private boolean trash_e;
+    private int id;
+    private int user_id_from;
+    private int user_id_to;
+    private String remitente;
+    private String recipiente;
+    private Date fecha;
+    private String asunto;
+    private String cuerpo;// adentro puedo poner html
+    private boolean trash_r;
+    private boolean trash_e;
 
-        public Mensaje(int id, int user_id_from, int user_id_to, String remitente, String recipiente, Date fecha, String asunto, String cuerpo, boolean trash_r, boolean trash_e) {
-            this.setId(id);
-            this.setUser_id_from(user_id_from);
-            this.setUser_id_to(user_id_to);
-            this.setRemitente(remitente);
-            this.setRecipiente(recipiente);
-            this.setFecha(fecha);
-            this.setAsunto(asunto);
-            this.setCuerpo(cuerpo);
-            this.setTrash_r(trash_r);
-            this.setTrash_e(trash_e);
-        }
+    public Mensaje(int id, int user_id_from, int user_id_to, String remitente, String recipiente, Date fecha, String asunto, String cuerpo, boolean trash_r, boolean trash_e) {
+        this.setId(id);
+        this.setUser_id_from(user_id_from);
+        this.setUser_id_to(user_id_to);
+        this.setRemitente(remitente);
+        this.setRecipiente(recipiente);
+        this.setFecha(fecha);
+        this.setAsunto(asunto);
+        this.setCuerpo(cuerpo);
+        this.setTrash_r(trash_r);
+        this.setTrash_e(trash_e);
+    }
 
     @Override
     public String toString() {

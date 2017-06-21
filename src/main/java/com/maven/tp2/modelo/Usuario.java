@@ -124,6 +124,11 @@ public class Usuario {
         this.admin = admin;
     }
 
+    public Usuario()
+    {
+
+    }
+
     public Usuario(int id, String nombre_usuario, String contrasenia, String nombre, String apellido, String direccion, String telefono, String ciudad, String provincia, String pais, String mail, boolean borrado, boolean admin) {
         this.id = id;
         this.nombre_usuario = nombre_usuario;
