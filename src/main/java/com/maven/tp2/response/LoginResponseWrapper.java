@@ -15,7 +15,7 @@ public class LoginResponseWrapper {
     }
 
     public LoginResponseWrapper(String sessionId) {
-        this.sessionId = sessionId;
+        this.setSessionId(sessionId);
     }
 
     public String getSessionId() {

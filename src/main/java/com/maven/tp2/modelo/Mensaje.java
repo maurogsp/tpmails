@@ -17,6 +17,11 @@ public class Mensaje {
     private boolean trash_r;
     private boolean trash_e;
 
+    public Mensaje()
+    {
+
+    }
+
     public Mensaje(int id, int user_id_from, int user_id_to, String remitente, String recipiente, Date fecha, String asunto, String cuerpo, boolean trash_r, boolean trash_e) {
         this.setId(id);
         this.setUser_id_from(user_id_from);

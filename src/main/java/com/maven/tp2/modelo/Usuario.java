@@ -130,19 +130,19 @@ public class Usuario {
     }
 
     public Usuario(int id, String nombre_usuario, String contrasenia, String nombre, String apellido, String direccion, String telefono, String ciudad, String provincia, String pais, String mail, boolean borrado, boolean admin) {
-        this.id = id;
-        this.nombre_usuario = nombre_usuario;
-        this.contrasenia = contrasenia;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.ciudad = ciudad;
-        this.provincia = provincia;
-        this.pais = pais;
-        this.mail = mail;
-        this.borrado = borrado;
-        this.admin = admin;
+        this.setId(id);
+        this.setNombre_usuario(nombre_usuario);
+        this.setContrasenia(contrasenia);
+        this.setNombre(nombre);
+        this.setApellido(apellido);
+        this.setDireccion(direccion);
+        this.setTelefono(telefono);
+        this.setCiudad(ciudad);
+        this.setProvincia(provincia);
+        this.setPais(pais);
+        this.setMail(mail);
+        this.setBorrado(borrado);
+        this.setAdmin(admin);
     }
 
     @Override

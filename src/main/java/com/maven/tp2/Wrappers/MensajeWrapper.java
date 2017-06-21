@@ -56,10 +56,10 @@ public class MensajeWrapper {
     }
 
     public MensajeWrapper(Mensaje msje) {
-        this.remitente = msje.getRemitente();
-        this.recipiente = msje.getRecipiente();
-        this.fecha = msje.getFecha();
-        this.asunto = msje.getAsunto();
-        this.cuerpo = msje.getCuerpo();
+        this.setRemitente(msje.getRemitente());
+        this.setRecipiente(msje.getRecipiente());
+        this.setFecha(msje.getFecha());
+        this.setAsunto(msje.getAsunto());
+        this.setCuerpo(msje.getCuerpo());
     }
 }

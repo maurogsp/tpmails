@@ -90,14 +90,14 @@ public class UsuarioWrapper {
     }
 
     public UsuarioWrapper(Usuario user) {
-        this.id = user.getId();
-        this.nombre = user.getNombre();
-        this.apellido = user.getApellido();
-        this.direccion = user.getDireccion();
-        this.telefono = user.getTelefono();
-        this.ciudad = user.getCiudad();
-        this.provincia = user.getProvincia();
-        this.pais = user.getPais();
-        this.mail = user.getMail();
+        this.setId(user.getId());
+        this.setNombre(user.getNombre());
+        this.setApellido(user.getApellido());
+        this.setDireccion(user.getDireccion());
+        this.setTelefono(user.getTelefono());
+        this.setCiudad(user.getCiudad());
+        this.setProvincia(user.getProvincia());
+        this.setPais(user.getPais());
+        this.setMail(user.getMail());
     }
 }

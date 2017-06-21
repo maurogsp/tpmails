@@ -24,66 +24,102 @@ public class ControladoraMensajes {
 
     @RequestMapping(value = "/recibidos", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<List<MensajeWrapper>> recibidos_x_usuario(@RequestHeader("id_usuario") int idu) {
-        List<Mensaje> listamails = service.mensajes_recibidos_x_usuario(idu);
-        if (listamails.size() > 0) {
-            List<MensajeWrapper> lista = new ArrayList<MensajeWrapper>();
-            for (Mensaje m : listamails)
-            {
-                MensajeWrapper mw = new MensajeWrapper(m);
-                lista.add(mw);
+        try
+        {
+            List<Mensaje> listamails = service.mensajes_recibidos_x_usuario(idu);
+            if (listamails.size() > 0) {
+                List<MensajeWrapper> lista = new ArrayList<MensajeWrapper>();
+                for (Mensaje m : listamails)
+                {
+                    MensajeWrapper mw = new MensajeWrapper(m);
+                    lista.add(mw);
+                }
+                return new ResponseEntity<List<MensajeWrapper>>(lista, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<List<MensajeWrapper>>(HttpStatus.NO_CONTENT);
             }
-            return new ResponseEntity<List<MensajeWrapper>>(lista, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<List<MensajeWrapper>>(HttpStatus.NO_CONTENT);
         }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 
     @RequestMapping(value = "/enviados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<List<MensajeWrapper>> enviados_x_usuario(@RequestHeader("id_usuario") int idu) {
-        List<Mensaje> listamails = service.mensajes_enviados_x_usuario(idu);
-        if (listamails.size() > 0) {
-            List<MensajeWrapper> lista = new ArrayList<MensajeWrapper>();
-            for (Mensaje m : listamails)
-            {
-                MensajeWrapper mw = new MensajeWrapper(m);
-                lista.add(mw);
+        try
+        {
+            List<Mensaje> listamails = service.mensajes_enviados_x_usuario(idu);
+            if (listamails.size() > 0) {
+                List<MensajeWrapper> lista = new ArrayList<MensajeWrapper>();
+                for (Mensaje m : listamails)
+                {
+                    MensajeWrapper mw = new MensajeWrapper(m);
+                    lista.add(mw);
+                }
+                return new ResponseEntity<List<MensajeWrapper>>(lista, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<List<MensajeWrapper>>(HttpStatus.NO_CONTENT);
             }
-            return new ResponseEntity<List<MensajeWrapper>>(lista, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<List<MensajeWrapper>>(HttpStatus.NO_CONTENT);
         }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 
     @RequestMapping(value = "/recibidos_eliminados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<List<MensajeWrapper>> rec_eliminados_x_usuario(@RequestHeader("id_usuario") int idu) {
-        List<Mensaje> listamails = service.mensajes_recibidos_borrados(idu);
-        if (listamails.size() > 0) {
-            List<MensajeWrapper> lista = new ArrayList<MensajeWrapper>();
-            for (Mensaje m : listamails)
-            {
-                MensajeWrapper mw = new MensajeWrapper(m);
-                lista.add(mw);
+        try
+        {
+            List<Mensaje> listamails = service.mensajes_recibidos_borrados(idu);
+            if (listamails.size() > 0) {
+                List<MensajeWrapper> lista = new ArrayList<MensajeWrapper>();
+                for (Mensaje m : listamails)
+                {
+                    MensajeWrapper mw = new MensajeWrapper(m);
+                    lista.add(mw);
+                }
+                return new ResponseEntity<List<MensajeWrapper>>(lista, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<List<MensajeWrapper>>(HttpStatus.NO_CONTENT);
             }
-            return new ResponseEntity<List<MensajeWrapper>>(lista, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<List<MensajeWrapper>>(HttpStatus.NO_CONTENT);
         }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 
     @RequestMapping(value = "/enviados_eliminados", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<List<MensajeWrapper>> env_eliminados_x_usuario(@RequestHeader("id_usuario") int idu) {
-        List<Mensaje> listamails = service.mensajes_enviados_borrados(idu);
-        if (listamails.size() > 0) {
-            List<MensajeWrapper> lista = new ArrayList<MensajeWrapper>();
-            for (Mensaje m : listamails)
-            {
-                MensajeWrapper mw = new MensajeWrapper(m);
-                lista.add(mw);
+        try
+        {
+            List<Mensaje> listamails = service.mensajes_enviados_borrados(idu);
+            if (listamails.size() > 0) {
+                List<MensajeWrapper> lista = new ArrayList<MensajeWrapper>();
+                for (Mensaje m : listamails)
+                {
+                    MensajeWrapper mw = new MensajeWrapper(m);
+                    lista.add(mw);
+                }
+                return new ResponseEntity<List<MensajeWrapper>>(lista, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<List<MensajeWrapper>>(HttpStatus.NO_CONTENT);
             }
-            return new ResponseEntity<List<MensajeWrapper>>(lista, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<List<MensajeWrapper>>(HttpStatus.NO_CONTENT);
         }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 
     @RequestMapping(value = "/nuevo_mensaje", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -92,6 +128,7 @@ public class ControladoraMensajes {
             service.enviarMensaje(request.getIduf(),request.getIdut(),request.getRemitente(),request.getRecipiente(),request.getAsunto(),request.getCuerpo(),request.isTrash_r(), request.isTrash_e());
             return new ResponseEntity(HttpStatus.CREATED);
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -102,6 +139,7 @@ public class ControladoraMensajes {
             service.eliminarMensaje(idu, idm);
             return new ResponseEntity(HttpStatus.OK);
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

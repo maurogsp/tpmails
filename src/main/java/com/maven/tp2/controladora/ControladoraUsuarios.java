@@ -26,41 +26,59 @@ public class ControladoraUsuarios {
     @RequestMapping(value = "/usuarios", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     ResponseEntity<List<UsuarioWrapper>> listar_usuarios(@RequestHeader("admin") boolean adm) {
-        if (adm) {
-            List<Usuario> listausuarios = service.listar_usuarios();
-            if (listausuarios.size() > 0) {
-                List<UsuarioWrapper> lista = new ArrayList<UsuarioWrapper>();
-                for (Usuario u : listausuarios) {
-                    UsuarioWrapper uw = new UsuarioWrapper(u);
-                    lista.add(uw);
+        try
+        {
+            if (adm) {
+                List<Usuario> listausuarios = service.listar_usuarios();
+                if (listausuarios.size() > 0) {
+                    List<UsuarioWrapper> lista = new ArrayList<UsuarioWrapper>();
+                    for (Usuario u : listausuarios) {
+                        UsuarioWrapper uw = new UsuarioWrapper(u);
+                        lista.add(uw);
+                    }
+                    return new ResponseEntity<List<UsuarioWrapper>>(lista, HttpStatus.OK);
+                } else {
+                    return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.NO_CONTENT);
                 }
-                return new ResponseEntity<List<UsuarioWrapper>>(lista, HttpStatus.OK);
             } else {
-                return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.NO_CONTENT);
+                return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.FORBIDDEN);
             }
-        } else {
-            return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.FORBIDDEN);
         }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 
     @RequestMapping(value = "/usuarios/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     ResponseEntity<List<UsuarioWrapper>> listar_usuarios(@RequestHeader("admin") boolean adm, @RequestParam("nombre") String nombre) {
-        if (adm) {
-            List<Usuario> listausuarios = service.listar_usuarios_x_nombre(nombre);
-            if (listausuarios.size() > 0) {
-                List<UsuarioWrapper> lista = new ArrayList<UsuarioWrapper>();
-                for (Usuario u : listausuarios) {
-                    UsuarioWrapper uw = new UsuarioWrapper(u);
-                    lista.add(uw);
+        try
+        {
+            if (adm) {
+                List<Usuario> listausuarios = service.listar_usuarios_x_nombre(nombre);
+                if (listausuarios.size() > 0) {
+                    List<UsuarioWrapper> lista = new ArrayList<UsuarioWrapper>();
+                    for (Usuario u : listausuarios) {
+                        UsuarioWrapper uw = new UsuarioWrapper(u);
+                        lista.add(uw);
+                    }
+                    return new ResponseEntity<List<UsuarioWrapper>>(lista, HttpStatus.OK);
+                } else {
+                    return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.NO_CONTENT);
                 }
-                return new ResponseEntity<List<UsuarioWrapper>>(lista, HttpStatus.OK);
             } else {
-                return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.NO_CONTENT);
+                return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.FORBIDDEN);
             }
-        } else {
-            return new ResponseEntity<List<UsuarioWrapper>>(HttpStatus.FORBIDDEN);
         }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 
     @RequestMapping(value = "/nuevo_usuario", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -74,6 +92,7 @@ public class ControladoraUsuarios {
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -89,6 +108,7 @@ public class ControladoraUsuarios {
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

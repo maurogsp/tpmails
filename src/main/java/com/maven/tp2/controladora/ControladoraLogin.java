@@ -18,6 +18,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ControladoraLogin {
 
+    public void setServiusuario(ServicioUsuarios serviusuario) {
+        this.serviusuario = serviusuario;
+    }
+
+    public void setSessionData(SessionData sessionData) {
+        this.sessionData = sessionData;
+    }
+
     @Autowired
     ServicioUsuarios serviusuario;
 
@@ -26,21 +34,38 @@ public class ControladoraLogin {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public @ResponseBody
-    ResponseEntity<LoginResponseWrapper> getById(@RequestParam("user") String nombreUsuario, @RequestParam("pwd") String pwd) {
-        UsuarioSesion u = serviusuario.login(nombreUsuario, pwd);
-        if (null != u) {
-            String sessionId = sessionData.addSession(u);
-            return new ResponseEntity<LoginResponseWrapper>(new LoginResponseWrapper(sessionId), HttpStatus.OK);
+    ResponseEntity<LoginResponseWrapper> getById1(@RequestParam("user") String nombreUsuario, @RequestParam("pwd") String pwd) {
+        try
+        {
+            UsuarioSesion u = serviusuario.login(nombreUsuario, pwd);
+            if (null != u) {
+                String sessionId = sessionData.addSession(u);
+                return new ResponseEntity<LoginResponseWrapper>(new LoginResponseWrapper(sessionId), HttpStatus.OK);
+            }
+            return new ResponseEntity(HttpStatus.FORBIDDEN);
         }
-        return new ResponseEntity(HttpStatus.FORBIDDEN);
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 
 
     @RequestMapping("/logout")
     public @ResponseBody
-    ResponseEntity getById(@RequestHeader("sessionid") String sessionId) {
-        sessionData.removeSession(sessionId);
-        return new ResponseEntity(HttpStatus.ACCEPTED);
+    ResponseEntity getById2(@RequestHeader("sessionid") String sessionId) {
+        try
+        {
+            sessionData.removeSession(sessionId);
+            return new ResponseEntity(HttpStatus.ACCEPTED);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
 }
