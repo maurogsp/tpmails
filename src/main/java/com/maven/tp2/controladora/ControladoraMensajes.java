@@ -46,7 +46,7 @@ public class ControladoraMensajes {
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            //e.printStackTrace();
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
@@ -71,7 +71,7 @@ public class ControladoraMensajes {
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            //e.printStackTrace();
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
@@ -96,7 +96,7 @@ public class ControladoraMensajes {
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            //e.printStackTrace();
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
@@ -121,7 +121,7 @@ public class ControladoraMensajes {
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            //e.printStackTrace();
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
@@ -133,7 +133,7 @@ public class ControladoraMensajes {
             service.enviarMensaje(request.getIduf(),request.getIdut(),request.getRemitente(),request.getRecipiente(),request.getAsunto(),request.getCuerpo(),request.isTrash_r(), request.isTrash_e());
             return new ResponseEntity(HttpStatus.CREATED);
         } catch (Exception e) {
-            e.printStackTrace();
+           //e.printStackTrace();
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -144,7 +144,7 @@ public class ControladoraMensajes {
             service.eliminarMensaje(idu, idm);
             return new ResponseEntity(HttpStatus.OK);
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
