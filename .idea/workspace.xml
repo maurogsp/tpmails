@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d30f0964-adb8-4692-969a-29c46feb3b09" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraUsuariosTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/maven/tp2/controladora/ControladoraLogin.class" afterPath="$PROJECT_DIR$/target/classes/com/maven/tp2/controladora/ControladoraLogin.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/maven/tp2/controladora/ControladoraLoginTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/maven/tp2/controladora/ControladoraLoginTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/maven/tp2/controladora/ControladoraUsuariosTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/maven/tp2/controladora/ControladoraUsuariosTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraMensajes.java" afterPath="$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraMensajes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/maven/tp2/Wrappers/UsuarioWrapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/maven/tp2/Wrappers/UsuarioWrapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraLogin.java" afterPath="$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraLogin.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraUsuarios.java" afterPath="$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraUsuarios.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraLoginTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraLoginTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraUsuariosTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraUsuariosTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,24 +27,9 @@
       <file leaf-file-name="ControladoraLogin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state relative-caret-position="880">
+              <caret line="57" column="25" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginResponseWrapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/response/LoginResponseWrapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding>
-                <element signature="e#302#303#0" expanded="true" />
-                <element signature="e#346#347#0" expanded="true" />
-                <element signature="e#464#465#0" expanded="true" />
-                <element signature="e#506#507#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -49,30 +37,44 @@
       <file leaf-file-name="ControladoraLoginTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraLoginTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="26" column="24" lean-forward="false" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+            <state relative-caret-position="108">
+              <caret line="49" column="93" lean-forward="false" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="93" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControladoraUsuarios.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ControladoraUsuarios.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraUsuarios.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="99" column="38" lean-forward="false" selection-start-line="99" selection-start-column="38" selection-end-line="99" selection-end-column="38" />
+            <state relative-caret-position="127">
+              <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#721#722#0" expanded="true" />
+                <element signature="e#759#760#0" expanded="true" />
+                <element signature="e#1271#1287#0" expanded="true" />
+                <element signature="e#2518#2534#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControladoraUsuariosTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ControladoraUsuariosTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraUsuariosTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            <state relative-caret-position="436">
+              <caret line="325" column="0" lean-forward="false" selection-start-line="325" selection-start-column="0" selection-end-line="325" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsuarioWrapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/Wrappers/UsuarioWrapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="105" column="18" lean-forward="false" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -81,8 +83,8 @@
       <file leaf-file-name="ControladoraMensajes.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraMensajes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2152">
-              <caret line="128" column="49" lean-forward="true" selection-start-line="128" selection-start-column="49" selection-end-line="128" selection-end-column="49" />
+            <state relative-caret-position="-68">
+              <caret line="128" column="49" lean-forward="false" selection-start-line="128" selection-start-column="49" selection-end-line="128" selection-end-column="49" />
               <folding>
                 <element signature="e#1126#1142#0" expanded="true" />
                 <element signature="e#2153#2169#0" expanded="true" />
@@ -93,24 +95,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DaoMensajes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/dao/DaoMensajes.java">
+      <file leaf-file-name="ServicioUsuariosTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/maven/tp2/servicio/ServicioUsuariosTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="59" column="73" lean-forward="true" selection-start-line="59" selection-start-column="73" selection-end-line="59" selection-end-column="73" />
+            <state relative-caret-position="348">
+              <caret line="52" column="29" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="52" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServicioMensajesTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/maven/tp2/servicio/ServicioMensajesTest.java">
+      <file leaf-file-name="DaoMensajes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/dao/DaoMensajes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="55" column="76" lean-forward="false" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="76" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="219">
+              <caret line="59" column="73" lean-forward="false" selection-start-line="59" selection-start-column="73" selection-end-line="59" selection-end-column="73" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,9 +120,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3560">
               <caret line="190" column="54" lean-forward="false" selection-start-line="190" selection-start-column="54" selection-end-line="190" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -130,7 +128,7 @@
       <file leaf-file-name="DaoUsuariosTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/maven/tp2/dao/DaoUsuariosTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1400">
+            <state relative-caret-position="-2980">
               <caret line="84" column="96" lean-forward="false" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="96" />
               <folding />
             </state>
@@ -180,17 +178,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/maven/tp2/servicio/ServicioUsuarios.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maven/tp2/request/MensajeRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maven/tp2/Wrappers/MensajeWrapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/maven/tp2/Wrappers/UsuarioWrapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maven/tp2/modelo/Mensaje.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maven/tp2/servicio/ServicioMensajes.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/maven/tp2/servicio/ServicioUsuariosTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/maven/tp2/servicio/ServicioMensajesTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maven/tp2/response/LoginResponseWrapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraMensajes.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraLogin.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraLoginTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraUsuariosTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraMensajes.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraUsuarios.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maven/tp2/Wrappers/UsuarioWrapper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraUsuariosTest.java" />
       </list>
     </option>
   </component>
@@ -687,33 +685,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
-    <configuration default="false" name="DaoUsuariosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.maven.tp2.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="tp2maurogaspar" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.maven.tp2.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.maven.tp2.dao.DaoUsuariosTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.ControladoraUsuariosTest">
     <configuration default="false" name="DaoMensajesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -810,6 +782,32 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="tp2maurogaspar" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="ControladoraUsuariosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.maven.tp2.controladora.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="tp2maurogaspar" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.maven.tp2.controladora" />
+      <option name="MAIN_CLASS_NAME" value="com.maven.tp2.controladora.ControladoraUsuariosTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1017,19 +1015,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.DaoUsuariosTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.DaoMensajesTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ServicioMensajesTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ControladoraLoginTest" />
-      <item index="4" class="java.lang.String" itemvalue="Application.App" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.DaoMensajesTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ServicioMensajesTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ControladoraLoginTest" />
+      <item index="3" class="java.lang.String" itemvalue="Application.App" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ControladoraUsuariosTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.App" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ControladoraUsuariosTest" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.ControladoraLoginTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ServicioMensajesTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DaoMensajesTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.DaoUsuariosTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.App" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ServicioMensajesTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DaoMensajesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1051,40 +1049,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ControladoraLoginTest - 2017.06.21 at 18h 29m 08s.xml">
-      <configuration name="ControladoraLoginTest" configurationId="JUnit" />
+    <history-entry file="ControladoraUsuariosTest - 2017.06.21 at 21h 51m 14s.xml">
+      <configuration name="ControladoraUsuariosTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControladoraLoginTest - 2017.06.21 at 18h 35m 48s.xml">
-      <configuration name="ControladoraLoginTest" configurationId="JUnit" />
+    <history-entry file="ControladoraUsuariosTest - 2017.06.21 at 21h 51m 18s.xml">
+      <configuration name="ControladoraUsuariosTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControladoraLoginTest - 2017.06.21 at 18h 37m 59s.xml">
-      <configuration name="ControladoraLoginTest" configurationId="JUnit" />
+    <history-entry file="ControladoraUsuariosTest - 2017.06.21 at 22h 00m 34s.xml">
+      <configuration name="ControladoraUsuariosTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControladoraLoginTest - 2017.06.21 at 18h 41m 12s.xml">
-      <configuration name="ControladoraLoginTest" configurationId="JUnit" />
+    <history-entry file="ControladoraUsuariosTest - 2017.06.21 at 22h 00m 40s.xml">
+      <configuration name="ControladoraUsuariosTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControladoraLoginTest - 2017.06.21 at 18h 41m 28s.xml">
-      <configuration name="ControladoraLoginTest" configurationId="JUnit" />
+    <history-entry file="ControladoraUsuariosTest - 2017.06.21 at 22h 10m 00s.xml">
+      <configuration name="ControladoraUsuariosTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControladoraLoginTest - 2017.06.21 at 18h 41m 58s.xml">
-      <configuration name="ControladoraLoginTest" configurationId="JUnit" />
+    <history-entry file="ControladoraUsuariosTest - 2017.06.21 at 22h 10m 58s.xml">
+      <configuration name="ControladoraUsuariosTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControladoraLoginTest - 2017.06.21 at 18h 42m 01s.xml">
-      <configuration name="ControladoraLoginTest" configurationId="JUnit" />
+    <history-entry file="ControladoraUsuariosTest - 2017.06.21 at 22h 12m 24s.xml">
+      <configuration name="ControladoraUsuariosTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControladoraLoginTest - 2017.06.21 at 18h 44m 26s.xml">
-      <configuration name="ControladoraLoginTest" configurationId="JUnit" />
+    <history-entry file="ControladoraUsuariosTest - 2017.06.21 at 22h 12m 27s.xml">
+      <configuration name="ControladoraUsuariosTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControladoraLoginTest - 2017.06.21 at 19h 44m 02s.xml">
-      <configuration name="ControladoraLoginTest" configurationId="JUnit" />
+    <history-entry file="ControladoraUsuariosTest - 2017.06.21 at 22h 14m 14s.xml">
+      <configuration name="ControladoraUsuariosTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControladoraLoginTest - 2017.06.21 at 19h 47m 34s.xml">
-      <configuration name="ControladoraLoginTest" configurationId="JUnit" />
+    <history-entry file="ControladoraUsuariosTest - 2017.06.21 at 22h 14m 17s.xml">
+      <configuration name="ControladoraUsuariosTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1096,9 +1093,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3126935" sideWeight="0.5030303" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3126935" sideWeight="0.4969697" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3126935" sideWeight="0.4969697" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26006192" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26006192" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28484848" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1121,7 +1118,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="81" />
+      <option name="time" value="97" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1182,8 +1179,8 @@
         <state relative-caret-position="1200">
           <caret line="67" column="100" lean-forward="true" selection-start-line="67" selection-start-column="100" selection-end-line="67" selection-end-column="100" />
           <folding>
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#455#456#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#455#456#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1378,14 +1375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/Wrappers/UsuarioWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="99" column="37" lean-forward="true" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/Wrappers/MensajeWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -1443,17 +1432,9 @@
         <state relative-caret-position="1060">
           <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#455#456#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#455#456#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/maven/tp2/servicio/ServicioUsuariosTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="38" column="30" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="38" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1469,10 +1450,8 @@
         <state relative-caret-position="320">
           <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="false" />
+            <element signature="e#414#415#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1488,24 +1467,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="55" column="76" lean-forward="false" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraLoginTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="26" column="24" lean-forward="false" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1514,24 +1475,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3560">
           <caret line="190" column="54" lean-forward="false" selection-start-line="190" selection-start-column="54" selection-end-line="190" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/maven/tp2/dao/DaoUsuariosTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
-          <caret line="84" column="96" lean-forward="false" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="96" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraUsuariosTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1539,15 +1482,15 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/dao/DaoMensajes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
-          <caret line="59" column="73" lean-forward="true" selection-start-line="59" selection-start-column="73" selection-end-line="59" selection-end-column="73" />
+          <caret line="59" column="73" lean-forward="false" selection-start-line="59" selection-start-column="73" selection-end-line="59" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraMensajes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2152">
-          <caret line="128" column="49" lean-forward="true" selection-start-line="128" selection-start-column="49" selection-end-line="128" selection-end-column="49" />
+        <state relative-caret-position="-68">
+          <caret line="128" column="49" lean-forward="false" selection-start-line="128" selection-start-column="49" selection-end-line="128" selection-end-column="49" />
           <folding>
             <element signature="e#1126#1142#0" expanded="true" />
             <element signature="e#2153#2169#0" expanded="true" />
@@ -1557,13 +1500,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/maven/tp2/dao/DaoUsuariosTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2980">
+          <caret line="84" column="96" lean-forward="false" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/maven/tp2/servicio/ServicioUsuariosTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="52" column="29" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="52" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="57" column="25" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/Wrappers/UsuarioWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="105" column="18" lean-forward="false" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraLoginTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="49" column="93" lean-forward="false" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/maven/tp2/controladora/ControladoraUsuarios.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="99" column="38" lean-forward="false" selection-start-line="99" selection-start-column="38" selection-end-line="99" selection-end-column="38" />
+        <state relative-caret-position="127">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#1271#1287#0" expanded="true" />
+            <element signature="e#2518#2534#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/maven/tp2/controladora/ControladoraUsuariosTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="325" column="0" lean-forward="false" selection-start-line="325" selection-start-column="0" selection-end-line="325" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

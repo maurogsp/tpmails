@@ -20,6 +20,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class ControladoraUsuarios {
+    public void setService(ServicioUsuarios service) {
+        this.service = service;
+    }
+
     @Autowired
     ServicioUsuarios service;
 
@@ -54,7 +58,7 @@ public class ControladoraUsuarios {
 
     @RequestMapping(value = "/usuarios/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
-    ResponseEntity<List<UsuarioWrapper>> listar_usuarios(@RequestHeader("admin") boolean adm, @RequestParam("nombre") String nombre) {
+    ResponseEntity<List<UsuarioWrapper>> listar_usuarios_nombre(@RequestHeader("admin") boolean adm, @RequestParam("nombre") String nombre) {
         try
         {
             if (adm) {
@@ -82,7 +86,7 @@ public class ControladoraUsuarios {
     }
 
     @RequestMapping(value = "/usuarios", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity nuevoMensaje(@RequestBody UsuarioRequest request, @RequestHeader("admin") boolean adm) {
+    public ResponseEntity nuevoUsuario(@RequestBody UsuarioRequest request, @RequestHeader("admin") boolean adm) {
         try {
             if (adm) {
                 service.crear_Usuario(request.getNombre_usuario(), request.getPassword(), request.getNombre(), request.getApellido(), request.getDireccion(), request.getTelefono(), request.getCiudad(), request.getProvincia(), request.getPais(), request.getMail(), request.isBorrado(), request.isAdmin());
@@ -98,7 +102,7 @@ public class ControladoraUsuarios {
     }
 
     @RequestMapping(value = "/usuarios", method = RequestMethod.DELETE)
-    public ResponseEntity eliminarMensaje(@RequestHeader("admin") boolean adm, @RequestParam("id") int idu) {
+    public ResponseEntity eliminarUsuario(@RequestHeader("admin") boolean adm, @RequestParam("id") int idu) {
         try {
             if (adm) {
                 service.eliminar_Usuario(idu);

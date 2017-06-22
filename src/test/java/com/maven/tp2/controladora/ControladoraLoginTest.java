@@ -72,7 +72,7 @@ public class ControladoraLoginTest extends TestCase{
         ResponseEntity<LoginResponseWrapper>lg = null;
         try
         {
-            lg = cl.getById1("prueba","123456");
+            lg = cl.login("prueba","123456");
         }
         catch (Exception e)
         {
@@ -87,7 +87,7 @@ public class ControladoraLoginTest extends TestCase{
         ResponseEntity ret = null;
         try
         {
-            ret = cl.getById1("prueba2","123456");
+            ret = cl.login("prueba2","123456");
         }
         catch (Exception e)
         {
@@ -103,7 +103,7 @@ public class ControladoraLoginTest extends TestCase{
         ResponseEntity ret = null;
         try
         {
-            ret = cl.getById1("prueba3","123456");
+            ret = cl.login("prueba3","123456");
         }
         catch (Exception e)
         {
@@ -118,7 +118,7 @@ public class ControladoraLoginTest extends TestCase{
         ResponseEntity ret = null;
         try
         {
-            ret = cl.getById2("112233");
+            ret = cl.logout("112233");
         }
         catch (Exception e)
         {
@@ -133,7 +133,7 @@ public class ControladoraLoginTest extends TestCase{
         ResponseEntity ret = null;
         try
         {
-            ret = cl.getById2("112244");
+            ret = cl.logout("112244");
         }
         catch (Exception e)
         {

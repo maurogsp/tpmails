@@ -89,6 +89,7 @@ public class UsuarioWrapper {
         this.mail = mail;
     }
 
+
     public UsuarioWrapper(Usuario user) {
         this.setId(user.getId());
         this.setNombre(user.getNombre());
@@ -99,5 +100,20 @@ public class UsuarioWrapper {
         this.setProvincia(user.getProvincia());
         this.setPais(user.getPais());
         this.setMail(user.getMail());
+    }
+
+    @Override
+    public String toString() {
+        return "UsuarioWrapper{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", provincia='" + provincia + '\'' +
+                ", pais='" + pais + '\'' +
+                ", mail='" + mail + '\'' +
+                '}';
     }
 }

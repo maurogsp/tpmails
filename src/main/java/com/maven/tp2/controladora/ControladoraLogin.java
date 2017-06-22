@@ -34,7 +34,7 @@ public class ControladoraLogin {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public @ResponseBody
-    ResponseEntity<LoginResponseWrapper> getById1(@RequestParam("user") String nombreUsuario, @RequestParam("pwd") String pwd) {
+    ResponseEntity<LoginResponseWrapper> login(@RequestParam("user") String nombreUsuario, @RequestParam("pwd") String pwd) {
         try
         {
             UsuarioSesion u = serviusuario.login(nombreUsuario, pwd);
@@ -55,7 +55,7 @@ public class ControladoraLogin {
 
     @RequestMapping("/logout")
     public @ResponseBody
-    ResponseEntity getById2(@RequestHeader("sessionid") String sessionId) {
+    ResponseEntity logout(@RequestHeader("sessionid") String sessionId) {
         try
         {
             sessionData.removeSession(sessionId);
