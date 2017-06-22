@@ -63,13 +63,13 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="getvacio" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.168"/>
-  <testcase name="crearUsuario_error" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.018"/>
-  <testcase name="eliminar_usuario_error" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.009"/>
-  <testcase name="crearUsuario" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.007"/>
-  <testcase name="eliminar_usuario" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.007"/>
-  <testcase name="listar_usuarios" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.006"/>
-  <testcase name="listar_usuarios_x_nombre" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.003"/>
+  <testcase name="getvacio" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.191"/>
+  <testcase name="crearUsuario_error" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.005"/>
+  <testcase name="eliminar_usuario_error" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.004"/>
+  <testcase name="crearUsuario" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.005"/>
+  <testcase name="eliminar_usuario" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.004"/>
+  <testcase name="listar_usuarios" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.004"/>
+  <testcase name="listar_usuarios_x_nombre" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.004"/>
   <testcase name="listar_usuarios_x_nombre_error" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.004"/>
-  <testcase name="get" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.002"/>
+  <testcase name="get" classname="com.maven.tp2.dao.DaoUsuariosTest" time="0.003"/>
 </testsuite>

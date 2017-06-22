@@ -105,7 +105,7 @@ public class ControladoraUsuariosTest extends TestCase {
         }
         catch (Exception e)
         {
-
+            e.printStackTrace();
         }
     }
 

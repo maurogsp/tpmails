@@ -19,8 +19,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class ControladoraMensajes {
+
     @Autowired
     ServicioMensajes service;
+
+    public void setService(ServicioMensajes service) {
+        this.service = service;
+    }
 
     @RequestMapping(value = "/mensajes/recibidos", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<List<MensajeWrapper>> recibidos_x_usuario(@RequestHeader("id_usuario") int idu) {
