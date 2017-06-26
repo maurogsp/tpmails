@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ControladoraLogin.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp2maurogaspar</a> &gt; <a href="index.source.html" class="el_package">com.maven.tp2.controladora</a> &gt; <span class="el_source">ControladoraLogin.java</span></div><h1>ControladoraLogin.java</h1><pre class="source lang-java linenums">package com.maven.tp2.controladora;
+
+import com.maven.tp2.modelo.Usuario;
+import com.maven.tp2.response.LoginResponseWrapper;
+import com.maven.tp2.servicio.ServicioUsuarios;
+import com.maven.tp2.util.SessionData;
+import com.maven.tp2.util.UsuarioSesion;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+/**
+ * Created by mauro on 13/06/17.
+ */
+@RestController
+@RequestMapping(value = &quot;/&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
+<span class="fc" id="L19">public class ControladoraLogin {</span>
+
+    public void setServiusuario(ServicioUsuarios serviusuario) {
+<span class="fc" id="L22">        this.serviusuario = serviusuario;</span>
+<span class="fc" id="L23">    }</span>
+
+    public void setSessionData(SessionData sessionData) {
+<span class="fc" id="L26">        this.sessionData = sessionData;</span>
+<span class="fc" id="L27">    }</span>
+
+    @Autowired
+    ServicioUsuarios serviusuario;
+
+    @Autowired
+    SessionData sessionData;
+
+    @RequestMapping(value = &quot;/login&quot;, method = RequestMethod.GET)
+    public @ResponseBody
+    ResponseEntity&lt;LoginResponseWrapper&gt; login(@RequestParam(&quot;user&quot;) String nombreUsuario, @RequestParam(&quot;pwd&quot;) String pwd) {
+        try
+        {
+<span class="fc" id="L40">            UsuarioSesion u = serviusuario.login(nombreUsuario, pwd);</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">            if (null != u) {</span>
+<span class="fc" id="L42">                String sessionId = sessionData.addSession(u);</span>
+<span class="fc" id="L43">                return new ResponseEntity&lt;LoginResponseWrapper&gt;(new LoginResponseWrapper(sessionId), HttpStatus.OK);</span>
+            }
+<span class="fc" id="L45">            return new ResponseEntity(HttpStatus.FORBIDDEN);</span>
+        }
+<span class="fc" id="L47">        catch (Exception e)</span>
+        {
+            //e.printStackTrace();
+<span class="fc" id="L50">            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);</span>
+        }
+
+    }
+
+
+    @RequestMapping(&quot;/logout&quot;)
+    public @ResponseBody
+    ResponseEntity logout(@RequestHeader(&quot;sessionid&quot;) String sessionId) {
+        try
+        {
+<span class="fc" id="L61">            sessionData.removeSession(sessionId);</span>
+<span class="fc" id="L62">            return new ResponseEntity(HttpStatus.ACCEPTED);</span>
+        }
+<span class="fc" id="L64">        catch (Exception e)</span>
+        {
+            //e.printStackTrace();
+<span class="fc" id="L67">            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);</span>
+        }
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

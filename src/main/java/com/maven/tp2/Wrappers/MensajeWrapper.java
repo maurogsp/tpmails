@@ -15,17 +15,13 @@ public class MensajeWrapper {
     private String asunto;
     private String cuerpo;
 
-    public String getRemitente() {
-        return remitente;
-    }
+
 
     public void setRemitente(String remitente) {
         this.remitente = remitente;
     }
 
-    public String getRecipiente() {
-        return recipiente;
-    }
+
 
     public void setRecipiente(String recipiente) {
         this.recipiente = recipiente;
@@ -47,9 +43,7 @@ public class MensajeWrapper {
         this.asunto = asunto;
     }
 
-    public String getCuerpo() {
-        return cuerpo;
-    }
+
 
     public void setCuerpo(String cuerpo) {
         this.cuerpo = cuerpo;

@@ -33,57 +33,43 @@ public class UsuarioWrapper {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
-    }
+
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
 
-    public String getDireccion() {
-        return direccion;
-    }
+
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
-    public String getTelefono() {
-        return telefono;
-    }
+
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    public String getCiudad() {
-        return ciudad;
-    }
+
 
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
 
-    public String getProvincia() {
-        return provincia;
-    }
+
 
     public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
 
-    public String getPais() {
-        return pais;
-    }
+
 
     public void setPais(String pais) {
         this.pais = pais;
     }
 
-    public String getMail() {
-        return mail;
-    }
+
 
     public void setMail(String mail) {
         this.mail = mail;
@@ -102,18 +88,4 @@ public class UsuarioWrapper {
         this.setMail(user.getMail());
     }
 
-    @Override
-    public String toString() {
-        return "UsuarioWrapper{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", ciudad='" + ciudad + '\'' +
-                ", provincia='" + provincia + '\'' +
-                ", pais='" + pais + '\'' +
-                ", mail='" + mail + '\'' +
-                '}';
-    }
 }

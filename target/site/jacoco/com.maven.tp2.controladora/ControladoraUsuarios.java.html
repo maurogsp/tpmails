@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ControladoraUsuarios.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp2maurogaspar</a> &gt; <a href="index.source.html" class="el_package">com.maven.tp2.controladora</a> &gt; <span class="el_source">ControladoraUsuarios.java</span></div><h1>ControladoraUsuarios.java</h1><pre class="source lang-java linenums">package com.maven.tp2.controladora;
+
+import com.maven.tp2.Wrappers.UsuarioWrapper;
+import com.maven.tp2.modelo.Mensaje;
+import com.maven.tp2.modelo.Usuario;
+import com.maven.tp2.request.UsuarioRequest;
+import com.maven.tp2.servicio.ServicioUsuarios;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by mauro on 18/06/17.
+ */
+@RestController
+@RequestMapping(&quot;/api&quot;)
+<span class="fc" id="L22">public class ControladoraUsuarios {</span>
+    public void setService(ServicioUsuarios service) {
+<span class="fc" id="L24">        this.service = service;</span>
+<span class="fc" id="L25">    }</span>
+
+    @Autowired
+    ServicioUsuarios service;
+
+    @RequestMapping(value = &quot;/usuarios&quot;, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody
+    ResponseEntity&lt;List&lt;UsuarioWrapper&gt;&gt; listar_usuarios(@RequestHeader(&quot;admin&quot;) boolean adm) {
+        try
+        {
+<span class="fc bfc" id="L35" title="All 2 branches covered.">            if (adm) {</span>
+<span class="fc" id="L36">                List&lt;Usuario&gt; listausuarios = service.listar_usuarios();</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">                if (listausuarios.size() &gt; 0) {</span>
+<span class="fc" id="L38">                    List&lt;UsuarioWrapper&gt; lista = new ArrayList&lt;UsuarioWrapper&gt;();</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">                    for (Usuario u : listausuarios) {</span>
+<span class="fc" id="L40">                        UsuarioWrapper uw = new UsuarioWrapper(u);</span>
+<span class="fc" id="L41">                        lista.add(uw);</span>
+<span class="fc" id="L42">                    }</span>
+<span class="fc" id="L43">                    return new ResponseEntity&lt;List&lt;UsuarioWrapper&gt;&gt;(lista, HttpStatus.OK);</span>
+                } else {
+<span class="fc" id="L45">                    return new ResponseEntity&lt;List&lt;UsuarioWrapper&gt;&gt;(HttpStatus.NO_CONTENT);</span>
+                }
+            } else {
+<span class="fc" id="L48">                return new ResponseEntity&lt;List&lt;UsuarioWrapper&gt;&gt;(HttpStatus.FORBIDDEN);</span>
+            }
+        }
+<span class="fc" id="L51">        catch (Exception e)</span>
+        {
+            //e.printStackTrace();
+<span class="fc" id="L54">            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);</span>
+        }
+
+    }
+
+    @RequestMapping(value = &quot;/usuarios/&quot;, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody
+    ResponseEntity&lt;List&lt;UsuarioWrapper&gt;&gt; listar_usuarios_nombre(@RequestHeader(&quot;admin&quot;) boolean adm, @RequestParam(&quot;nombre&quot;) String nombre) {
+        try
+        {
+<span class="fc bfc" id="L64" title="All 2 branches covered.">            if (adm) {</span>
+<span class="fc" id="L65">                List&lt;Usuario&gt; listausuarios = service.listar_usuarios_x_nombre(nombre);</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">                if (listausuarios.size() &gt; 0) {</span>
+<span class="fc" id="L67">                    List&lt;UsuarioWrapper&gt; lista = new ArrayList&lt;UsuarioWrapper&gt;();</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">                    for (Usuario u : listausuarios) {</span>
+<span class="fc" id="L69">                        UsuarioWrapper uw = new UsuarioWrapper(u);</span>
+<span class="fc" id="L70">                        lista.add(uw);</span>
+<span class="fc" id="L71">                    }</span>
+<span class="fc" id="L72">                    return new ResponseEntity&lt;List&lt;UsuarioWrapper&gt;&gt;(lista, HttpStatus.OK);</span>
+                } else {
+<span class="fc" id="L74">                    return new ResponseEntity&lt;List&lt;UsuarioWrapper&gt;&gt;(HttpStatus.NO_CONTENT);</span>
+                }
+            } else {
+<span class="fc" id="L77">                return new ResponseEntity&lt;List&lt;UsuarioWrapper&gt;&gt;(HttpStatus.FORBIDDEN);</span>
+            }
+        }
+<span class="fc" id="L80">        catch (Exception e)</span>
+        {
+            //e.printStackTrace();
+<span class="fc" id="L83">            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);</span>
+        }
+
+    }
+
+    @RequestMapping(value = &quot;/usuarios&quot;, method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity nuevoUsuario(@RequestBody UsuarioRequest request, @RequestHeader(&quot;admin&quot;) boolean adm) {
+        try {
+<span class="fc bfc" id="L91" title="All 2 branches covered.">            if (adm) {</span>
+<span class="fc" id="L92">                service.crear_Usuario(request.getNombre_usuario(), request.getPassword(), request.getNombre(), request.getApellido(), request.getDireccion(), request.getTelefono(), request.getCiudad(), request.getProvincia(), request.getPais(), request.getMail(), request.isBorrado(), request.isAdmin());</span>
+<span class="fc" id="L93">                return new ResponseEntity(HttpStatus.CREATED);</span>
+            } else {
+<span class="fc" id="L95">                return new ResponseEntity&lt;List&lt;UsuarioWrapper&gt;&gt;(HttpStatus.FORBIDDEN);</span>
+            }
+
+<span class="fc" id="L98">        } catch (Exception e) {</span>
+            //e.printStackTrace();
+<span class="fc" id="L100">            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);</span>
+        }
+    }
+
+    @RequestMapping(value = &quot;/usuarios&quot;, method = RequestMethod.DELETE)
+    public ResponseEntity eliminarUsuario(@RequestHeader(&quot;admin&quot;) boolean adm, @RequestParam(&quot;id&quot;) int idu) {
+        try {
+<span class="fc bfc" id="L107" title="All 2 branches covered.">            if (adm) {</span>
+<span class="fc" id="L108">                service.eliminar_Usuario(idu);</span>
+<span class="fc" id="L109">                return new ResponseEntity(HttpStatus.OK);</span>
+            } else {
+<span class="fc" id="L111">                return new ResponseEntity&lt;List&lt;UsuarioWrapper&gt;&gt;(HttpStatus.FORBIDDEN);</span>
+            }
+
+<span class="fc" id="L114">        } catch (Exception e) {</span>
+            //e.printStackTrace();
+<span class="fc" id="L116">            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

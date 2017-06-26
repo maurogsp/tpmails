@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DaoUsuarios.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp2maurogaspar</a> &gt; <a href="index.source.html" class="el_package">com.maven.tp2.dao</a> &gt; <span class="el_source">DaoUsuarios.java</span></div><h1>DaoUsuarios.java</h1><pre class="source lang-java linenums">package com.maven.tp2.dao;
+
+import com.maven.tp2.modelo.Mensaje;
+import com.maven.tp2.modelo.Usuario;
+import com.maven.tp2.util.UsuarioSesion;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by mauro on 13/06/17.
+ */
+@Repository
+<span class="fc" id="L19">public class DaoUsuarios {</span>
+
+    @Autowired
+    private Connection conex;
+
+    public Connection getConex() {
+<span class="nc" id="L25">        return conex;</span>
+    }
+
+    public void setConex(Connection conex) {
+<span class="fc" id="L29">        this.conex = conex;</span>
+<span class="fc" id="L30">    }</span>
+
+
+    public UsuarioSesion get(String nombreUsuario, String password) throws Exception {
+<span class="fc" id="L34">        List&lt;UsuarioSesion&gt; lista = new ArrayList&lt;UsuarioSesion&gt;();</span>
+<span class="fc" id="L35">        UsuarioSesion u = null;</span>
+        try {
+<span class="fc" id="L37">            String cmd = &quot;select id, nombre_usuario, pass, admin from usuarios where nombre_usuario = '&quot; + nombreUsuario + &quot;' and pass ='&quot; + password+&quot;'&quot;;</span>
+<span class="fc" id="L38">            Statement st = conex.createStatement();</span>
+<span class="fc" id="L39">            ResultSet rs = st.executeQuery(cmd);</span>
+
+<span class="fc bfc" id="L41" title="All 2 branches covered.">            while (rs.next()) {</span>
+<span class="fc" id="L42">                UsuarioSesion user = new UsuarioSesion(rs.getInt(&quot;id&quot;), rs.getString(&quot;nombre_usuario&quot;), rs.getString(&quot;pass&quot;), rs.getBoolean(&quot;admin&quot;));</span>
+<span class="fc" id="L43">                lista.add(user);</span>
+<span class="fc" id="L44">            }</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">            if (lista.size() == 1) {</span>
+<span class="fc" id="L46">                u = lista.get(0);</span>
+            }
+
+<span class="fc" id="L49">        } catch (Exception e) {</span>
+<span class="fc" id="L50">            throw e;</span>
+
+<span class="fc" id="L52">        }</span>
+<span class="fc" id="L53">        return u;</span>
+
+
+    }
+
+    public List listar_usuarios() throws Exception {
+<span class="fc" id="L59">        List&lt;Usuario&gt; lista = new ArrayList&lt;Usuario&gt;();</span>
+        try {
+<span class="fc" id="L61">            String cmd = &quot;select * from usuarios&quot;;</span>
+<span class="fc" id="L62">            Statement st = conex.createStatement();</span>
+<span class="fc" id="L63">            ResultSet rs = st.executeQuery(cmd);</span>
+
+<span class="fc bfc" id="L65" title="All 2 branches covered.">            while (rs.next()) {</span>
+<span class="fc" id="L66">                Usuario user = new Usuario(rs.getInt(&quot;id&quot;), rs.getString(&quot;nombre_usuario&quot;), rs.getString(&quot;pass&quot;), rs.getString(&quot;nombre&quot;), rs.getString(&quot;apellido&quot;), rs.getString(&quot;direccion&quot;), rs.getString(&quot;telefono&quot;), rs.getString(&quot;ciudad&quot;), rs.getString(&quot;provincia&quot;), rs.getString(&quot;pais&quot;), rs.getString(&quot;mail&quot;), rs.getBoolean(&quot;borrado&quot;), rs.getBoolean(&quot;admin&quot;));</span>
+<span class="fc" id="L67">                lista.add(user);</span>
+<span class="fc" id="L68">            }</span>
+<span class="nc" id="L69">        } catch (Exception e) {</span>
+<span class="nc" id="L70">            throw e;</span>
+<span class="fc" id="L71">        }</span>
+<span class="fc" id="L72">        return lista;</span>
+    }
+
+    public List listar_usuarios_x_nombre(String nombre) throws Exception{
+<span class="fc" id="L76">        List&lt;Usuario&gt; lista = new ArrayList&lt;Usuario&gt;();</span>
+        try {
+<span class="fc" id="L78">            String cmd = &quot;select * from usuarios where nombre like '%&quot; + nombre + &quot;%'&quot;;</span>
+<span class="fc" id="L79">            Statement st = conex.createStatement();</span>
+<span class="fc" id="L80">            ResultSet rs = st.executeQuery(cmd);</span>
+
+<span class="fc bfc" id="L82" title="All 2 branches covered.">            while (rs.next()) {</span>
+<span class="fc" id="L83">                Usuario user = new Usuario(rs.getInt(&quot;id&quot;), rs.getString(&quot;nombre_usuario&quot;), rs.getString(&quot;pass&quot;), rs.getString(&quot;nombre&quot;), rs.getString(&quot;apellido&quot;), rs.getString(&quot;direccion&quot;), rs.getString(&quot;telefono&quot;), rs.getString(&quot;ciudad&quot;), rs.getString(&quot;provincia&quot;), rs.getString(&quot;pais&quot;), rs.getString(&quot;mail&quot;), rs.getBoolean(&quot;borrado&quot;), rs.getBoolean(&quot;admin&quot;));</span>
+<span class="fc" id="L84">                lista.add(user);</span>
+<span class="fc" id="L85">            }</span>
+<span class="fc" id="L86">        } catch (Exception e) {</span>
+<span class="fc" id="L87">           throw e;</span>
+<span class="fc" id="L88">        }</span>
+<span class="fc" id="L89">        return lista;</span>
+    }
+
+    public void crearUsuario(String nombre_usuario, String contrasenia, String nombre, String apellido, String direccion, String telefono, String ciudad, String provincia, String pais, String mail, boolean borrado, boolean admin) throws Exception {
+        try {
+<span class="fc" id="L94">            conex.setAutoCommit(false);</span>
+<span class="fc" id="L95">            PreparedStatement ps = conex.prepareStatement(&quot;INSERT INTO usuarios (nombre_usuario, pass, nombre, apellido, direccion, telefono, ciudad, provincia, pais, mail, borrado, admin) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)&quot;);</span>
+<span class="fc" id="L96">            ps.setString(1, nombre_usuario);</span>
+<span class="fc" id="L97">            ps.setString(2, contrasenia);</span>
+<span class="fc" id="L98">            ps.setString(3, nombre);</span>
+<span class="fc" id="L99">            ps.setString(4, apellido);</span>
+<span class="fc" id="L100">            ps.setString(5, direccion);</span>
+<span class="fc" id="L101">            ps.setString(6, telefono);</span>
+<span class="fc" id="L102">            ps.setString(7, ciudad);</span>
+<span class="fc" id="L103">            ps.setString(8, provincia);</span>
+<span class="fc" id="L104">            ps.setString(9, pais);</span>
+<span class="fc" id="L105">            ps.setString(10, mail);</span>
+<span class="fc" id="L106">            ps.setBoolean(11, borrado);</span>
+<span class="fc" id="L107">            ps.setBoolean(12, admin);</span>
+<span class="fc" id="L108">            ps.execute();</span>
+<span class="fc" id="L109">            conex.commit();</span>
+<span class="fc" id="L110">        } catch (Exception e) {</span>
+<span class="fc" id="L111">            throw e;</span>
+<span class="fc" id="L112">        }</span>
+
+<span class="fc" id="L114">    }</span>
+
+    public void eliminar_usuario(int idu) throws Exception {
+        try {
+<span class="fc" id="L118">            conex.setAutoCommit(false);</span>
+<span class="fc" id="L119">            PreparedStatement ps = conex.prepareStatement(&quot;update usuarios set borrado = 1 where id = ?&quot;);</span>
+<span class="fc" id="L120">            ps.setInt(1, idu);</span>
+<span class="fc" id="L121">            ps.execute();</span>
+<span class="fc" id="L122">            conex.commit();</span>
+<span class="fc" id="L123">        } catch (Exception e) {</span>
+<span class="fc" id="L124">            throw e;</span>
+<span class="fc" id="L125">        }</span>
+<span class="fc" id="L126">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

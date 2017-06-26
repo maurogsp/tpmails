@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UsuarioWrapper.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp2maurogaspar</a> &gt; <a href="index.source.html" class="el_package">com.maven.tp2.Wrappers</a> &gt; <span class="el_source">UsuarioWrapper.java</span></div><h1>UsuarioWrapper.java</h1><pre class="source lang-java linenums">package com.maven.tp2.Wrappers;
+
+import com.maven.tp2.modelo.Usuario;
+
+/**
+ * Created by mauro on 18/06/17.
+ */
+public class UsuarioWrapper {
+
+    private int id;
+    private String nombre;
+    private String apellido;
+    private String direccion;
+    private String telefono;
+    private String ciudad;
+    private String provincia;
+    private String pais;
+    private String mail;
+
+    public int getId() {
+<span class="fc" id="L21">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="fc" id="L25">        this.id = id;</span>
+<span class="fc" id="L26">    }</span>
+
+    public String getNombre() {
+<span class="fc" id="L29">        return nombre;</span>
+    }
+
+    public void setNombre(String nombre) {
+<span class="fc" id="L33">        this.nombre = nombre;</span>
+<span class="fc" id="L34">    }</span>
+
+
+
+    public void setApellido(String apellido) {
+<span class="fc" id="L39">        this.apellido = apellido;</span>
+<span class="fc" id="L40">    }</span>
+
+
+
+    public void setDireccion(String direccion) {
+<span class="fc" id="L45">        this.direccion = direccion;</span>
+<span class="fc" id="L46">    }</span>
+
+
+
+    public void setTelefono(String telefono) {
+<span class="fc" id="L51">        this.telefono = telefono;</span>
+<span class="fc" id="L52">    }</span>
+
+
+
+    public void setCiudad(String ciudad) {
+<span class="fc" id="L57">        this.ciudad = ciudad;</span>
+<span class="fc" id="L58">    }</span>
+
+
+
+    public void setProvincia(String provincia) {
+<span class="fc" id="L63">        this.provincia = provincia;</span>
+<span class="fc" id="L64">    }</span>
+
+
+
+    public void setPais(String pais) {
+<span class="fc" id="L69">        this.pais = pais;</span>
+<span class="fc" id="L70">    }</span>
+
+
+
+    public void setMail(String mail) {
+<span class="fc" id="L75">        this.mail = mail;</span>
+<span class="fc" id="L76">    }</span>
+
+
+<span class="fc" id="L79">    public UsuarioWrapper(Usuario user) {</span>
+<span class="fc" id="L80">        this.setId(user.getId());</span>
+<span class="fc" id="L81">        this.setNombre(user.getNombre());</span>
+<span class="fc" id="L82">        this.setApellido(user.getApellido());</span>
+<span class="fc" id="L83">        this.setDireccion(user.getDireccion());</span>
+<span class="fc" id="L84">        this.setTelefono(user.getTelefono());</span>
+<span class="fc" id="L85">        this.setCiudad(user.getCiudad());</span>
+<span class="fc" id="L86">        this.setProvincia(user.getProvincia());</span>
+<span class="fc" id="L87">        this.setPais(user.getPais());</span>
+<span class="fc" id="L88">        this.setMail(user.getMail());</span>
+<span class="fc" id="L89">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

@@ -35,21 +35,7 @@ public class Mensaje {
         this.setTrash_e(trash_e);
     }
 
-    @Override
-    public String toString() {
-        return "Mensaje{" +
-                "id=" + id +
-                ", user_id_from=" + user_id_from +
-                ", user_id_to=" + user_id_to +
-                ", remitente='" + remitente + '\'' +
-                ", recipiente='" + recipiente + '\'' +
-                ", fecha=" + fecha +
-                ", asunto='" + asunto + '\'' +
-                ", cuerpo='" + cuerpo + '\'' +
-                ", trash_r=" + trash_r +
-                ", trash_e=" + trash_e +
-                '}';
-    }
+
 
     public int getId() {
         return id;

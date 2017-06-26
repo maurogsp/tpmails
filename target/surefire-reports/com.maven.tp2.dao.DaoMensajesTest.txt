@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.maven.tp2.dao.DaoMensajesTest
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 sec - in com.maven.tp2.dao.DaoMensajesTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.099 sec - in com.maven.tp2.dao.DaoMensajesTest

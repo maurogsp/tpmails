@@ -145,22 +145,5 @@ public class Usuario {
         this.setAdmin(admin);
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "id=" + id +
-                ", nombre_usuario='" + nombre_usuario + '\'' +
-                ", contrasenia='" + contrasenia + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", ciudad='" + ciudad + '\'' +
-                ", provincia='" + provincia + '\'' +
-                ", pais='" + pais + '\'' +
-                ", mail='" + mail + '\'' +
-                ", borrado=" + borrado +
-                ", admin=" + admin +
-                '}';
-    }
+
 }

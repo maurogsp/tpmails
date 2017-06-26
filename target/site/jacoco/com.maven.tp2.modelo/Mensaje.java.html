@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Mensaje.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp2maurogaspar</a> &gt; <a href="index.source.html" class="el_package">com.maven.tp2.modelo</a> &gt; <span class="el_source">Mensaje.java</span></div><h1>Mensaje.java</h1><pre class="source lang-java linenums">package com.maven.tp2.modelo;
+
+import java.util.Date;
+
+/**
+ * Created by mauro on 11/06/17.
+ */
+public class Mensaje {
+    private int id;
+    private int user_id_from;
+    private int user_id_to;
+    private String remitente;
+    private String recipiente;
+    private Date fecha;
+    private String asunto;
+    private String cuerpo;// adentro puedo poner html
+    private boolean trash_r;
+    private boolean trash_e;
+
+    public Mensaje()
+<span class="fc" id="L21">    {</span>
+
+<span class="fc" id="L23">    }</span>
+
+<span class="fc" id="L25">    public Mensaje(int id, int user_id_from, int user_id_to, String remitente, String recipiente, Date fecha, String asunto, String cuerpo, boolean trash_r, boolean trash_e) {</span>
+<span class="fc" id="L26">        this.setId(id);</span>
+<span class="fc" id="L27">        this.setUser_id_from(user_id_from);</span>
+<span class="fc" id="L28">        this.setUser_id_to(user_id_to);</span>
+<span class="fc" id="L29">        this.setRemitente(remitente);</span>
+<span class="fc" id="L30">        this.setRecipiente(recipiente);</span>
+<span class="fc" id="L31">        this.setFecha(fecha);</span>
+<span class="fc" id="L32">        this.setAsunto(asunto);</span>
+<span class="fc" id="L33">        this.setCuerpo(cuerpo);</span>
+<span class="fc" id="L34">        this.setTrash_r(trash_r);</span>
+<span class="fc" id="L35">        this.setTrash_e(trash_e);</span>
+<span class="fc" id="L36">    }</span>
+
+
+
+    public int getId() {
+<span class="fc" id="L41">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="fc" id="L45">        this.id = id;</span>
+<span class="fc" id="L46">    }</span>
+
+    public int getUser_id_from() {
+<span class="fc" id="L49">        return user_id_from;</span>
+    }
+
+    public void setUser_id_from(int user_id_from) {
+<span class="fc" id="L53">        this.user_id_from = user_id_from;</span>
+<span class="fc" id="L54">    }</span>
+
+    public int getUser_id_to() {
+<span class="fc" id="L57">        return user_id_to;</span>
+    }
+
+    public void setUser_id_to(int user_id_to) {
+<span class="fc" id="L61">        this.user_id_to = user_id_to;</span>
+<span class="fc" id="L62">    }</span>
+
+    public String getRemitente() {
+<span class="fc" id="L65">        return remitente;</span>
+    }
+
+    public void setRemitente(String remitente) {
+<span class="fc" id="L69">        this.remitente = remitente;</span>
+<span class="fc" id="L70">    }</span>
+
+    public String getRecipiente() {
+<span class="fc" id="L73">        return recipiente;</span>
+    }
+
+    public void setRecipiente(String recipiente) {
+<span class="fc" id="L77">        this.recipiente = recipiente;</span>
+<span class="fc" id="L78">    }</span>
+
+    public Date getFecha() {
+<span class="fc" id="L81">        return fecha;</span>
+    }
+
+    public void setFecha(Date fecha) {
+<span class="fc" id="L85">        this.fecha = fecha;</span>
+<span class="fc" id="L86">    }</span>
+
+    public String getAsunto() {
+<span class="fc" id="L89">        return asunto;</span>
+    }
+
+    public void setAsunto(String asunto) {
+<span class="fc" id="L93">        this.asunto = asunto;</span>
+<span class="fc" id="L94">    }</span>
+
+    public String getCuerpo() {
+<span class="fc" id="L97">        return cuerpo;</span>
+    }
+
+    public void setCuerpo(String cuerpo) {
+<span class="fc" id="L101">        this.cuerpo = cuerpo;</span>
+<span class="fc" id="L102">    }</span>
+
+    public boolean isTrash_r() {
+<span class="fc" id="L105">        return trash_r;</span>
+    }
+
+    public void setTrash_r(boolean trash_r) {
+<span class="fc" id="L109">        this.trash_r = trash_r;</span>
+<span class="fc" id="L110">    }</span>
+
+    public boolean isTrash_e() {
+<span class="fc" id="L113">        return trash_e;</span>
+    }
+
+    public void setTrash_e(boolean trash_e) {
+<span class="fc" id="L117">        this.trash_e = trash_e;</span>
+<span class="fc" id="L118">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

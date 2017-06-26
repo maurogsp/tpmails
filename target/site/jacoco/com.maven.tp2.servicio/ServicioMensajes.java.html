@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ServicioMensajes.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp2maurogaspar</a> &gt; <a href="index.source.html" class="el_package">com.maven.tp2.servicio</a> &gt; <span class="el_source">ServicioMensajes.java</span></div><h1>ServicioMensajes.java</h1><pre class="source lang-java linenums">package com.maven.tp2.servicio;
+
+import com.maven.tp2.dao.DaoMensajes;
+import com.maven.tp2.modelo.Mensaje;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by mauro on 11/06/17.
+ */
+@Service
+public class ServicioMensajes {
+    @Autowired
+    DaoMensajes bd;
+
+    public void setBd(DaoMensajes bd) {
+<span class="fc" id="L20">        this.bd = bd;</span>
+<span class="fc" id="L21">    }</span>
+
+<span class="fc" id="L23">    public ServicioMensajes() {</span>
+
+<span class="fc" id="L25">    }</span>
+
+    public List todos_los_mensajes() throws Exception {
+<span class="fc" id="L28">        List lista = null;</span>
+        try {
+<span class="fc" id="L30">            lista = bd.todos_los_mensajes();</span>
+<span class="fc" id="L31">        } catch (Exception e) {</span>
+<span class="fc" id="L32">            throw e;</span>
+<span class="fc" id="L33">        }</span>
+<span class="fc" id="L34">        return lista;</span>
+    }
+
+    public List mensajes_recibidos_x_usuario(int id) throws Exception {
+<span class="fc" id="L38">        List lista = null;</span>
+        try {
+<span class="fc" id="L40">            lista = bd.mensajes_recibidos_x_usuario(id);</span>
+<span class="fc" id="L41">        } catch (Exception e) {</span>
+<span class="fc" id="L42">            throw e;</span>
+<span class="fc" id="L43">        }</span>
+<span class="fc" id="L44">        return lista;</span>
+    }
+
+    public List mensajes_enviados_x_usuario(int id) throws Exception{
+<span class="fc" id="L48">        List lista = null;</span>
+        try {
+<span class="fc" id="L50">            lista = bd.mensajes_enviados_x_usuario(id);</span>
+<span class="fc" id="L51">        } catch (Exception e) {</span>
+<span class="fc" id="L52">            throw e;</span>
+<span class="fc" id="L53">        }</span>
+<span class="fc" id="L54">        return lista;</span>
+    }
+
+    public List mensajes_recibidos_borrados(int id) throws Exception{
+<span class="fc" id="L58">        List lista = null;</span>
+        try {
+<span class="fc" id="L60">            lista = bd.mensajes_recibidos_borrados(id);</span>
+<span class="fc" id="L61">        } catch (Exception e) {</span>
+<span class="fc" id="L62">            throw e;</span>
+<span class="fc" id="L63">        }</span>
+<span class="fc" id="L64">        return lista;</span>
+    }
+
+    public List mensajes_enviados_borrados(int id) throws Exception {
+<span class="fc" id="L68">        List lista = null;</span>
+        try {
+<span class="fc" id="L70">            lista = bd.mensajes_enviados_borrados(id);</span>
+<span class="fc" id="L71">        } catch (Exception e) {</span>
+<span class="fc" id="L72">            throw e;</span>
+<span class="fc" id="L73">        }</span>
+<span class="fc" id="L74">        return lista;</span>
+    }
+
+    public void enviarMensaje(int user_id_from, int user_id_to, String remitente, String recipiente, String asunto, String cuerpo, boolean trash_r, boolean trash_e) throws Exception{
+        try {
+<span class="fc" id="L79">            bd.enviarMail(user_id_from, user_id_to, remitente, recipiente, asunto, cuerpo, trash_r, trash_e);</span>
+<span class="fc" id="L80">        } catch (Exception e) {</span>
+<span class="fc" id="L81">            throw e;</span>
+<span class="fc" id="L82">        }</span>
+
+<span class="fc" id="L84">    }</span>
+
+    public void eliminarMensaje(int idu, int idm) throws Exception {
+        try {
+<span class="fc" id="L88">            bd.eliminar_mensaje(idu, idm);</span>
+<span class="fc" id="L89">        } catch (Exception e) {</span>
+<span class="fc" id="L90">            throw e;</span>
+<span class="fc" id="L91">        }</span>
+<span class="fc" id="L92">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

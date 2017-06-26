@@ -1,0 +1,8 @@
+com/maven/tp2/dao/DaoMensajesTest.class
+com/maven/tp2/dao/DaoUsuariosTest.class
+com/maven/tp2/AppTest.class
+com/maven/tp2/controladora/ControladoraMensajesTest.class
+com/maven/tp2/controladora/ControladoraUsuariosTest.class
+com/maven/tp2/servicio/ServicioMensajesTest.class
+com/maven/tp2/controladora/ControladoraLoginTest.class
+com/maven/tp2/servicio/ServicioUsuariosTest.class
